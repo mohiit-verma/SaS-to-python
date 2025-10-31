@@ -1,0 +1,61 @@
+SAS code chunker:
+
+  ### Prompt: SAS Code Chunking (≤ 200 Lines)
+
+  You are an expert SAS code parser.  
+  Split the SAS program below into logical chunks, each containing **no more than 200 lines**, while preserving structure and formatting.
+
+  #### Rules
+  1. **Logical boundaries**
+    - Keep each `DATA` or `PROC` step together (`data|proc` → matching `run;` or `quit;`).
+    - Keep `%macro ... %mend` blocks intact (ignore `run;`/`quit;` inside macros).
+    - Group standalone statements like `options`, `libname`, `%include`, etc.
+
+  2. **Comment awareness**
+    - Ignore comments *only* for boundary detection:
+      - Single-line: `* ... ;`
+      - Block: `/* ... */` (multi-line allowed)
+    - Do not remove or alter comments in the output.
+
+  3. **Chunk limits**
+    - Each chunk ≤ 200 lines.
+    - If a block exceeds the limit:
+      - Prefer splitting on blank lines.
+      - Otherwise split after a `;`.
+      - As last resort, hard split at 200.
+    - Never split inside a `%macro ... %mend`.
+
+  4. **Integrity**
+    - Preserve all whitespace, line order, and comments exactly.
+    - Output must contain all lines, no overlaps or gaps.
+
+  #### Output Format (JSON Only)
+  Return **only** valid JSON:
+  ```json
+  {
+    "max_lines": 200,
+    "total_input_lines": <int>,
+    "total_chunks": <int>,
+    "chunks": [
+      {
+        "index": <int>,
+        "start_line": <int>,
+        "end_line": <int>,
+        "line_count": <int>,
+        "type": "proc|data|macro|mixed",
+        "note": "<reason for boundary>",
+        "code": "<verbatim SAS code>"
+      }
+    ]
+  }
+  ````
+
+  #### Input SAS Code
+
+  ```
+  {SAS_CODE}
+  ```
+
+  **Output only the JSON — no commentary.**
+
+  ```
