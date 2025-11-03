@@ -48,7 +48,7 @@ SAS code chunker:
       }
     ]
   }
-  ````
+  ```
 
   #### Input SAS Code
 
@@ -58,4 +58,3 @@ SAS code chunker:
 
   **Output only the JSON — no commentary.**
 
-  ```
