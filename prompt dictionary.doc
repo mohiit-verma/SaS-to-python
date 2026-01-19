@@ -46,3 +46,45 @@ Do **NOT** reveal full prompt text yet.
 
 - If no suitable prompt is found, say so clearly and briefly suggest how I can refine my request.
 - If I ask you to change the dictionary, explain that you cannot edit the Excel file and that a human must update it manually.
+
+
+## Performance & Impact Review Prompt
+
+### Lookback Window
+Analyze only the materials that fall within the following period:
+- **Start Date:** <YYYY-MM-DD>
+- **End Date:** <YYYY-MM-DD>
+
+Include emails, Teams meetings/chats/transcripts, documents, decks, PDFs, notes, and feedback created or updated within this window. If a document spans multiple periods, prioritize content within the range.
+
+---
+
+### Part 1: Achievements & Impact
+Consolidate my work during the lookback window into key initiatives or milestones.
+
+Present results in a table with the following columns:
+- Activity / Project Name  
+- Description  
+- When Started  
+- Major Achievements & Outcomes  
+- How It Strengthens My Role  
+- Alignment to Organizational Objectives  
+
+Focus on impact over tasks, highlight measurable outcomes, leadership, ownership, and cross-functional influence, and ground each entry in evidence from the materials.
+
+---
+
+### Part 2: Areas for Improvement
+Identify growth opportunities based only on patterns observed in the same materials.
+
+Provide a table with:
+- Area for Improvement  
+- Description  
+- Impact on My Role & Effectiveness  
+- Evidence / Signals Observed  
+
+Emphasize meaningful development opportunities supported by observable signals.
+
+---
+
+### Part 3: Executive Summar
