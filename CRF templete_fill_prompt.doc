@@ -1,0 +1,197 @@
+
+You are helping me populate a **CRF presentation deck**.
+
+I will provide:
+1. A **summary document** containing the source information.
+2. A **CRF deck template** that already contains the correct structure and formatting.
+
+Your task is to **populate the template using the summary document while keeping the template formatting completely intact**.
+
+---
+
+# Primary Objective
+Fill the CRF deck template with content derived from the summary document while **strictly preserving the template’s formatting, layout, and structure**.
+
+The template should remain visually unchanged — only the **content inside placeholders should be replaced or completed**.
+
+---
+
+# Critical Formatting Rules (Highest Priority)
+
+You must **NOT modify the template structure**.
+
+Strictly preserve:
+- Slide order
+- Slide titles
+- Section headings
+- Layout structure
+- Placeholder positions
+- Tables and chart placeholders
+- Text boxes
+- Formatting style
+- Font hierarchy
+- Bullet levels
+- Visual layout
+- Design elements
+- Icons or labels
+- Any slide master formatting
+
+### Allowed Changes
+You may only:
+- Replace placeholder text
+- Insert content into existing bullet areas
+- Populate existing tables
+- Fill text boxes with relevant content
+
+### Not Allowed
+Do NOT:
+- Delete slides
+- Move sections
+- Change layouts
+- Modify slide formatting
+- Change title wording unless explicitly needed
+- Resize elements
+- Replace template visuals
+- Change slide design
+
+If a section cannot be populated due to missing information, **leave the placeholder intact** or mark it clearly.
+
+---
+
+# Source of Truth
+The **summary document is the only source of information**.
+
+Rules:
+- Do not invent information.
+- Do not infer numbers or metrics.
+- Do not introduce claims not supported by the summary.
+- Do not add external knowledge.
+
+If the summary does not contain the information needed:
+- leave the placeholder text unchanged, OR
+- mark the field with `[Information not available in source]`.
+
+---
+
+# Slide Content Guidelines
+
+Convert the summary content into **presentation-ready slide text**.
+
+Prefer:
+- concise bullet points
+- short statements
+- executive-friendly phrasing
+- structured information
+
+Avoid:
+- long paragraphs
+- narrative text
+- redundant content
+
+
+---
+
+# Slide Mapping Process
+
+Follow this process:
+
+1. Review the CRF template slide by slide.
+2. Identify the intent of each slide.
+3. Locate the relevant information in the summary document.
+4. Convert the information into slide-appropriate content.
+5. Insert the content into the existing placeholders.
+
+Do not restructure the slide.
+
+---
+
+# Handling Template Components
+
+## Bullet Slides
+Populate bullet placeholders with concise points derived from the summary.
+
+## Tables
+If a table exists in the template:
+- fill only the relevant cells
+- keep table formatting intact
+
+## Charts / Visual Layout Slides
+If a slide appears intended for a visual:
+- provide the textual inputs needed
+- do not fabricate numerical values
+
+## Framework Slides (2x2, process, etc.)
+Translate summary content into the framework structure.
+
+---
+
+# Handling Corner Cases
+
+## Missing Information
+If the summary lacks required details:
+- leave placeholder text intact OR
+- add `[Information not available in source]`.
+
+## Conflicting Information
+If the summary has conflicting statements:
+- use the most explicit or well-supported statement
+- flag it as `[Potential inconsistency in source]`.
+
+## Overly Detailed Source Text
+Condense long explanations into concise slide bullets.
+
+## Repeated Content
+Consolidate repeated points to avoid duplication across slides.
+
+## Numbers and Metrics
+Preserve numbers exactly as written in the source.
+Do not calculate or estimate missing values.
+
+---
+
+# Content Quality Rules
+
+Ensure that:
+- slides remain concise
+- content aligns with the slide purpose
+- terminology remains consistent across slides
+- no unsupported claims are introduced
+- the narrative across slides remains logical
+
+---
+
+# Output Format
+
+Provide results in this structure:
+
+## Slide-by-Slide Content Mapping
+
+For each slide:
+
+**Slide Number:**  
+**Slide Title:**  
+**Slide Objective:**  
+**Filled Content:**  
+(insert the content intended for the placeholders)
+
+**Notes:**  
+- Missing information (if any)
+- Source inconsistencies (if any)
+
+---
+
+## Missing Inputs
+List sections of the template that could not be populated due to missing information in the summary document.
+
+---
+
+## Final Validation Checklist
+
+Confirm that:
+
+- Template formatting was preserved
+- No slide structure was modified
+- No unsupported content was added
+- Missing information was clearly flagged
+- Content is presentation-ready and concise
+- Terminology is consistent across slides
