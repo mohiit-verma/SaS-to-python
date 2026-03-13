@@ -7,14 +7,14 @@ I will provide:
 
 Your task is to **populate the template using the summary document while keeping the template formatting completely intact**.
 
----
+
 
 # Primary Objective
 Fill the CRF deck template with content derived from the summary document while **strictly preserving the template’s formatting, layout, and structure**.
 
 The template should remain visually unchanged — only the **content inside placeholders should be replaced or completed**.
 
----
+
 
 # Critical Formatting Rules (Highest Priority)
 
@@ -56,7 +56,7 @@ Do NOT:
 
 If a section cannot be populated due to missing information, **leave the placeholder intact** or mark it clearly.
 
----
+
 
 # Source of Truth
 The **summary document is the only source of information**.
@@ -71,7 +71,7 @@ If the summary does not contain the information needed:
 - leave the placeholder text unchanged, OR
 - mark the field with `[Information not available in source]`.
 
----
+
 
 # Slide Content Guidelines
 
@@ -89,7 +89,7 @@ Avoid:
 - redundant content
 
 
----
+
 
 # Slide Mapping Process
 
@@ -103,7 +103,7 @@ Follow this process:
 
 Do not restructure the slide.
 
----
+
 
 # Handling Template Components
 
@@ -123,7 +123,7 @@ If a slide appears intended for a visual:
 ## Framework Slides (2x2, process, etc.)
 Translate summary content into the framework structure.
 
----
+
 
 # Handling Corner Cases
 
@@ -147,7 +147,7 @@ Consolidate repeated points to avoid duplication across slides.
 Preserve numbers exactly as written in the source.
 Do not calculate or estimate missing values.
 
----
+
 
 # Content Quality Rules
 
@@ -158,7 +158,7 @@ Ensure that:
 - no unsupported claims are introduced
 - the narrative across slides remains logical
 
----
+
 
 # Output Format
 
@@ -178,12 +178,12 @@ For each slide:
 - Missing information (if any)
 - Source inconsistencies (if any)
 
----
+
 
 ## Missing Inputs
 List sections of the template that could not be populated due to missing information in the summary document.
 
----
+
 
 ## Final Validation Checklist
 
@@ -198,14 +198,13 @@ Confirm that:
 
 
 
----------------------- 
+----------------
 # CRF Proposal Deck → Concise Word Summary
 
-You are an expert document summarization assistant. Your task is to convert a **CRF proposal PowerPoint deck** into a **highly concise Word document summary** that will later be used to populate a CRF proposal template.
+You are an expert document summarization assistant. Your task is to convert a **CRF proposal PowerPoint deck** into a **highly concise Word document summary**.
 
-The goal is to **capture the essential content of each slide with minimal text while preserving all numbers and metrics exactly as written**.
+The goal is to **capture the essential content of each slide while preserving all numbers and metrics exactly as written**.
 
----
 
 # Instructions
 
@@ -215,11 +214,9 @@ Process the presentation **in the exact order of slides**.
 For every slide include:
 - **Slide Number**
 - **Slide Title**
-- **Very concise bullet-point summary (max 2–4 bullets)**
+- **Very concise bullet-point summary**
 
-Avoid long sentences or paragraphs.
 
----
 
 ## 2. Preserve All Numerical Data
 All **metrics, numbers, KPIs, percentages, financial values, dates, and benchmarks must be preserved exactly as written**.
@@ -232,7 +229,6 @@ Do NOT:
 
 If numbers appear in charts or tables, include them in the summary.
 
----
 
 ## 3. Content to Capture (Concise Only)
 
@@ -249,7 +245,6 @@ Capture only **core business information**, such as:
 
 Avoid expanding explanations.
 
----
 
 ## 4. Charts, Graphs, and Visuals
 
@@ -259,32 +254,13 @@ If a slide contains charts or graphs:
 - Preserve **all visible numbers and labels**
 - Convert insights into **1–2 concise bullets**
 
----
 
 ## 5. Tables
 
-Convert tables into **very short bullet points** while preserving numeric values.
+Write table as it is with proper title while preserving numeric values.
 
----
 
-## 6. Minimal Text Slides
-
-If a slide contains very little text:
-
-- Provide a **1-bullet takeaway if possible**
-- If not interpretable, write:
-
-*Visual slide – limited textual information.*
-
----
-
-## 7. Section Divider Slides
-
-Include them with **1 short bullet describing the section theme**.
-
----
-
-## 8. Do Not Add Extra Content
+## 6. Do Not Add Extra Content
 
 Do NOT:
 - Add explanations
@@ -294,7 +270,6 @@ Do NOT:
 
 Keep the output **compact and structured**.
 
----
 
 # Output Format (Word Friendly)
 
@@ -308,13 +283,10 @@ Keep the output **compact and structured**.
 - Metric / value  
 - Metric / value
 
----
 
 # Output Requirements
 
 - Maintain **exact slide order**
-- Use **short bullet points only**
-- **No paragraphs**
-- **Minimal text**
 - Preserve **all metrics and numbers exactly**
 - Output must be **clean and ready to paste into a Word document**
+- Name the final doc with same title as of the deck.
