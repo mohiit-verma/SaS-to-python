@@ -290,3 +290,110 @@ Keep the output **compact and structured**.
 - Preserve **all metrics and numbers exactly**
 - Output must be **clean and ready to paste into a Word document**
 - Name the final doc with same title as of the deck.
+
+
+
+
+
+# CRF Deck → Word Summary Prompt
+
+You are given a well-structured CRF presentation deck containing text, headings, hierarchy, tables, charts, and diagrams.
+
+Your task is to generate a **slide-by-slide structured summary in Word document format**, ensuring the output can be directly used to populate a CRF deck template.
+
+---
+
+## Instructions
+
+### 1. Slide-wise Structure
+- Process content **slide by slide**.
+- For each slide:
+  - Start with the **exact slide title (do not modify, rephrase, or shorten)**.
+  - Maintain the **original hierarchy exactly as is**:
+    - Headings
+    - Subheadings
+    - Bullet levels
+    - Indentation structure
+
+---
+
+### 2. Text Summarization
+- Summarize descriptive text **clearly and concisely**.
+- Preserve **key messages, intent, and business meaning**.
+- Do not introduce new information or interpretations.
+- Do not collapse or alter the hierarchy.
+
+---
+
+### 3. Tables and Numerical Data (Critical)
+- **Preserve tables EXACTLY as they appear in the input**.
+- Do **not**:
+  - Modify wording
+  - Change values
+  - Reformat structure
+  - Reorder rows/columns
+  - Summarize or interpret data
+
+#### Table Handling Guidelines:
+- Reproduce tables in the **same structure and layout**:
+  - Same column headers
+  - Same row order
+  - Same cell content
+- Maintain:
+  - Alignment
+  - Grouping
+  - Any hierarchical relationships within the table
+- If multiple tables exist, keep them **separate and in original order**.
+- Ensure tables remain **in tabular format only (never convert to text)**.
+
+---
+
+### 4. Charts and Diagrams
+- Do not recreate visuals.
+- Provide:
+  - A **concise summary of the insight or message** conveyed.
+  - Include any **explicit numbers, labels, or annotations exactly as shown**.
+- If data is visible in the chart:
+  - Present it in **table format without modification**.
+
+---
+
+### 5. Formatting Requirements (Word Ready)
+- Ensure output is structured for **direct use in a Word document**:
+  - Clear separation per slide
+  - Consistent formatting
+  - Proper indentation reflecting hierarchy
+- Keep slide sections clean and easy to transfer into CRF templates.
+
+---
+
+### 6. Strict Constraints
+- Do **not alter any headings or titles**.
+- Do **not change numerical values**.
+- Do **not modify table content or format in any way**.
+- Do **not convert tables into paragraphs**.
+- Do **not lose or restructure hierarchy**.
+- Do **not add assumptions, interpretations, or external context**.
+
+---
+
+## Output Format
+
+**Slide Title (unchanged)**  
+- Heading  
+  - Sub-point (summarized)  
+
+**Table (exactly as in input):**  
+(reproduce without any modification)
+
+**Chart/Diagram Insight:**  
+- Concise explanation of key takeaway  
+
+---
+
+## Goal
+Produce a **high-fidelity, structured summary** that:
+- Retains exact tables and all numerical data  
+- Preserves full hierarchy and structure  
+- Enables seamless reuse in a CRF deck template  
+- Requires minimal to no manual correction  
