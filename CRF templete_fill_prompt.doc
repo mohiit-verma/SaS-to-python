@@ -397,3 +397,17 @@ Produce a **high-fidelity, structured summary** that:
 - Preserves full hierarchy and structure  
 - Enables seamless reuse in a CRF deck template  
 - Requires minimal to no manual correction  
+
+
+
+,Ally Bank,Barclays,Marcus,SoFi,Capital One,Discover,American Express,Apple Savings,CIT Bank,Synchrony
+Ally Bank,0,18,42,72,82,76,70,58,24,46
+Barclays,18,0,20,40,66,60,64,28,12,22
+Marcus,42,20,0,68,74,62,56,52,30,34
+SoFi,72,40,68,0,92,84,80,90,48,54
+Capital One,82,66,74,92,0,100,98,85,50,94
+Discover,76,60,62,84,100,0,95,78,44,88
+American Express,70,64,56,80,98,95,0,86,38,82
+Apple Savings,58,28,52,90,85,78,86,0,26,36
+CIT Bank,24,12,30,48,50,44,38,26,0,16
+Synchrony,46,22,34,54,94,88,82,36,16,0
