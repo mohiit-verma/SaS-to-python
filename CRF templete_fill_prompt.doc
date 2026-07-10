@@ -475,3 +475,16 @@ Upstart,100,66,54,76,86,98,0,76,82,50
 LightStream,92,72,62,80,68,74,76,0,56,70
 Best Egg,80,50,40,60,78,88,82,56,0,36
 PenFed,68,76,82,64,44,42,50,70,36,0
+
+
+claude + ChatGPT
+
+,Barclays,Ally Bank,Synchrony,Marcus,Discover,Capital One,American Express,SoFi
+Barclays,0,18,20,11,55,70,66,31
+Ally Bank,18,0,30,42,69,83,67,61
+Synchrony,20,30,0,14,70,81,67,40
+Marcus,11,42,14,0,52,57,42,45
+Discover,55,69,70,52,0,97,95,85
+Capital One,70,83,81,57,97,0,100,90
+American Express,66,67,67,42,95,100,0,82
+SoFi,31,61,40,45,85,90,82,0
