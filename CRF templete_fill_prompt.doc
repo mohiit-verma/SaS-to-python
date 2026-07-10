@@ -479,12 +479,13 @@ PenFed,68,76,82,64,44,42,50,70,36,0
 
 claude + ChatGPT
 
-,Barclays,Ally Bank,Synchrony,Marcus,Discover,Capital One,American Express,SoFi
-Barclays,0,18,20,11,55,70,66,31
-Ally Bank,18,0,30,42,69,83,67,61
-Synchrony,20,30,0,14,70,81,67,40
-Marcus,11,42,14,0,52,57,42,45
-Discover,55,69,70,52,0,97,95,85
-Capital One,70,83,81,57,97,0,100,90
-American Express,66,67,67,42,95,100,0,82
-SoFi,31,61,40,45,85,90,82,0
+,Barclays,Ally Bank,Synchrony,Marcus,Capital One,American Express,SoFi,CIT Bank
+Barclays,0,18,43,12,57,56,36,8
+Ally Bank,18,0,37,68,72,57,80,60
+Synchrony,43,37,0,27,81,73,42,17
+Marcus,12,68,27,0,63,52,71,39
+Capital One,57,72,81,63,0,100,89,50
+American Express,56,57,73,52,100,0,68,37
+SoFi,36,80,42,71,89,68,0,42
+CIT Bank,8,60,17,39,50,37,42,0
+
