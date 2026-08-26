@@ -489,3 +489,119 @@ American Express,56,57,73,52,100,0,68,37
 SoFi,36,80,42,71,89,68,0,42
 CIT Bank,8,60,17,39,50,37,42,0
 
+
+
+
+Here is the complete prompt structured for this dataset exercise:
+
+You are a financial data analyst specializing in digital search behavior and brand visibility metrics.
+
+Your task is to analyze the relative Google search popularity of the following US financial institutions for loans.
+
+Banks/Lenders:
+
+1. SoFi
+
+2. Wells Fargo
+
+3. U.S. Bank
+
+4. Discover
+
+5. LendingClub
+
+6. Upgrade
+
+7. Upstart
+
+8. LightStream
+
+9. Best Egg
+
+10. PenFed
+
+Your Task:
+
+Step 1: Estimate pairwise search volume
+For every unique brand pair (i, j) where i ≠ j, independently estimate the combined Google search volume when both brands are searched together or compared for loans/credit products. This gives you a raw search volume estimate for each of the 45 unique pairs.
+
+Step 2: Rank order and score
+Once you have raw search volume estimates for all 45 unique pairs, rank order them from lowest to highest and rescale them to a score between 1–100, where:
+
+* The pair with the lowest combined search volume gets a score closest to 1
+
+* The pair with the highest combined search volume gets a score closest to 100
+
+* All other pairs are scored proportionally in between based on their rank
+
+Step 3: Build the matrix
+Populate a 10×10 symmetric matrix using the rescaled scores where:
+
+* cell[i][j] = rescaled score for the pair (i, j)
+
+* cell[i][i] = 0 (same institution compared to itself)
+
+* cell[i][j] = cell[j][i] always (fully symmetric)
+
+Output format (strict):
+Respond with ONLY the following CSV — no explanation, no markdown, no extra text, no code fences.
+
+The first row must be a header with a blank first cell followed by all 10 institution names.
+Each subsequent row must start with the institution name, followed by 10 comma-separated integer scores.
+
+,SoFi,Wells Fargo,U.S. Bank,Discover,LendingClub,Upgrade,Upstart,LightStream,Best Egg,PenFed
+SoFi,0,,,,,,,,,
+Wells Fargo,,0,,,,,,,,
+U.S. Bank,,,0,,,,,,,
+Discover,,,,0,,,,,,
+LendingClub,,,,,0,,,,,
+Upgrade,,,,,,0,,,,
+Upstart,,,,,,,0,,,
+LightStream,,,,,,,,0,,
+Best Egg,,,,,,,,,0,
+PenFed,,,,,,,,,,0
+
+Rules:
+
+* Diagonal must always be 0
+
+* Matrix must be perfectly symmetric: row i col j = row j col i
+
+* All scores must be integers between 1 and 100
+
+* Scoring is based on rank order of pairwise search volume estimates, not individual brand popularity
+
+* No extra text, headers, or explanation outside the CSV block
+
+
+
+
+execute above prompt for following banks
+barclays, ally, synchrony, marcus, capital one, american express, SoFi, CIT Bank
+
+
+claude
+
+,Barclays,Ally,Synchrony,Marcus,Capital One,American Express,SoFi,CIT Bank
+Barclays,0,41,8,23,45,30,27,1
+Ally,41,0,78,96,100,85,89,38
+Synchrony,8,78,0,49,67,56,52,5
+Marcus,23,96,49,0,74,71,63,12
+Capital One,45,100,67,74,0,93,82,34
+American Express,30,85,56,71,93,0,60,16
+SoFi,27,89,52,63,82,60,0,19
+CIT Bank,1,38,5,12,34,16,19,0
+
+
+ChatGPT
+,Barclays,Ally,Synchrony,Marcus,Capital One,American Express,SoFi,CIT Bank
+Barclays,0,30,27,16,67,49,38,1
+Ally,30,0,56,41,93,78,71,12
+Synchrony,27,56,0,34,89,74,63,8
+Marcus,16,41,34,0,82,60,52,5
+Capital One,67,93,89,82,0,100,96,45
+American Express,49,78,74,60,100,0,85,23
+SoFi,38,71,63,52,96,85,0,19
+CIT Bank,1,12,8,5,45,23,19,0
+
+
