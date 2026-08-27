@@ -672,26 +672,23 @@ Claude
 
 
 Claude
-Query Category,Search Prompt,Low (M),High (M),Midpoint (M)
-HYSA / best savings,"""best HYSA"", ""best high yield savings account""",0.45,0.90,0.675
-APY / rate shopping,"""highest APY"", ""best savings rates"", ""top APY banks""",0.20,0.45,0.325
-CD shopping,"""best CD rates"", ""should I open a CD?""",0.30,0.55,0.425
-Money market / cash accounts,"""best money market account"", ""where should I keep cash?""",0.20,0.35,0.275
-Short-term cash options,"""where should I put $50k for 6 months?""",0.20,0.40,0.300
-Savings-account switching/opening,"""should I switch banks?"", ""best savings account for $100k""",0.20,0.35,0.275
-Total high-intent deposit shopping,,1.55,3.00,2.275
+Query Category,Search Prompt,Estimated 2026 US Claude Prompts,Share of Total
+HYSA / best savings,"""best HYSA"", ""best high yield savings account""",0.45–0.90M,29.7%
+APY / rate shopping,"""highest APY"", ""best savings rates"", ""top APY banks""",0.20–0.45M,14.3%
+CD shopping,"""best CD rates"", ""should I open a CD?""",0.30–0.55M,18.7%
+Money market / cash accounts,"""best money market account"", ""where should I keep cash?""",0.20–0.35M,12.1%
+Short-term cash options,"""where should I put $50k for 6 months?""",0.20–0.40M,13.2%
+Savings-account switching/opening,"""should I switch banks?"", ""best savings account for $100k""",0.20–0.35M,12.0%
+Total high-intent deposit shopping,—,~1.5–3.0M/year,100.0%
 
 ChatGPT
 
-2026 Estimate,Annual US ChatGPT Volume,Monthly US ChatGPT Volume,Daily US ChatGPT Volume
-Total High-Intent Savings/Deposit Queries,8M-15M,667K-1.25M,22K-41K
-Base Case,11M,917K,30K
-Conservative Case,5M,417K,14K
-Upside Case,20M,1.67M,55K
-HYSA / Best Savings Accounts,3M-5M,250K-417K,8K-14K
-APY / Rate Shopping,1.5M-2.5M,125K-208K,4K-7K
-CD Shopping,1.5M-2.5M,125K-208K,4K-7K
-Money Market / Cash Accounts,0.8M-1.5M,67K-125K,2K-4K
-Short-Term Cash Options,0.5M-1M,42K-83K,1.4K-2.7K
-Savings Account Switching / Opening,0.7M-1.5M,58K-125K,1.9K-4.1K
-Very High-Intent / Near-Transactional,2M-5M,167K-417K,5.5K-13.7K
+Query Category,Example Query,Estimated Share,Estimated Annual US ChatGPT Queries,Estimated Monthly Queries,Estimated Daily Queries
+HYSA / Best Savings Accounts,"best HYSA, best high yield savings account",35%,3.85M,321K,10.5K
+APY / Interest Rate Shopping,"highest APY, best savings rates, top APY banks",18%,1.98M,165K,5.4K
+CD Shopping,"best CD rates, should I open a CD",18%,1.98M,165K,5.4K
+Money Market / Cash Accounts,"best money market account, highest cash yield",10%,1.10M,92K,3.0K
+Short-Term Cash Options,"where should I put $50K for 6 months",8%,0.88M,73K,2.4K
+Savings Account Switching / Opening,"best savings account to open, should I switch banks",7%,0.77M,64K,2.1K
+Other Deposit Shopping,"cash management, deposit alternatives, savings options",4%,0.44M,37K,1.2K
+TOTAL HIGH-INTENT DEPOSIT SHOPPING,All categories,100%,11.00M,917K,30.1K
