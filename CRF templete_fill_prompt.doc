@@ -604,7 +604,50 @@ American Express,49,78,74,60,100,0,85,23
 SoFi,38,71,63,52,96,85,0,19
 CIT Bank,1,12,8,5,45,23,19,0
 
+You are a search-demand analyst supporting competitive strategy for a 
+retail bank.
 
+TASK
+Estimate the distribution of US consumer search demand for 
+[PRODUCT CATEGORY: e.g. deposit accounts] and return it as a 
+cluster-level percentage share table.
+
+METHOD — follow in order
+1. Define the denominator explicitly. Include acquisition and research 
+   intent queries. EXCLUDE pure servicing queries (e.g. "[bank] login", 
+   "[bank] routing number"), which distort brand share. State the 
+   denominator and your estimated total monthly volume before the table.
+2. Build the query inventory. List the head terms and their long-tail, 
+   tenor, educational, comparison, local, and segment variants.
+3. Set the unit of analysis to PRODUCT CLUSTER, not exact-match query. 
+   Roll every variant into its parent cluster.
+4. Assign directional monthly US volumes, then compute each cluster's 
+   share. Shares must total 100%.
+
+OUTPUT
+| Cluster | Share |
+Ordered high to low. Whole numbers or one decimal.
+
+Then, below the table:
+- One line per cluster listing which queries roll up into it
+- Which cluster's share is least stable and why
+- Any cluster that is concentrated in a few players rather than 
+  distributed
+
+CONSTRAINTS
+- Label these as modeled estimates, not measured data. Do not present 
+  false precision.
+- Do not reverse-engineer toward a target number. If I supply an 
+  expected share, reconcile against it and tell me what definitional 
+  change would be required — do not silently adjust inputs.
+- Flag that Google Keyword Planner, Semrush, or Ahrefs is required for 
+  figures that will go client-facing.
+
+PARAMETERS
+Market: [US]
+Product category: [deposit accounts]
+Competitor of interest: [Barclays USCB]
+Time frame: [current quarter]
 Claude
 
 | Cluster | Share |
@@ -625,3 +668,30 @@ Claude
 | Money market accounts                  |   5% |
 | Other/general deposit-account research |   2% |
 | Total                                  | 100% |
+
+
+
+Claude
+Query Category,Search Prompt,Low (M),High (M),Midpoint (M)
+HYSA / best savings,"""best HYSA"", ""best high yield savings account""",0.45,0.90,0.675
+APY / rate shopping,"""highest APY"", ""best savings rates"", ""top APY banks""",0.20,0.45,0.325
+CD shopping,"""best CD rates"", ""should I open a CD?""",0.30,0.55,0.425
+Money market / cash accounts,"""best money market account"", ""where should I keep cash?""",0.20,0.35,0.275
+Short-term cash options,"""where should I put $50k for 6 months?""",0.20,0.40,0.300
+Savings-account switching/opening,"""should I switch banks?"", ""best savings account for $100k""",0.20,0.35,0.275
+Total high-intent deposit shopping,,1.55,3.00,2.275
+
+ChatGPT
+
+2026 Estimate,Annual US ChatGPT Volume,Monthly US ChatGPT Volume,Daily US ChatGPT Volume
+Total High-Intent Savings/Deposit Queries,8M-15M,667K-1.25M,22K-41K
+Base Case,11M,917K,30K
+Conservative Case,5M,417K,14K
+Upside Case,20M,1.67M,55K
+HYSA / Best Savings Accounts,3M-5M,250K-417K,8K-14K
+APY / Rate Shopping,1.5M-2.5M,125K-208K,4K-7K
+CD Shopping,1.5M-2.5M,125K-208K,4K-7K
+Money Market / Cash Accounts,0.8M-1.5M,67K-125K,2K-4K
+Short-Term Cash Options,0.5M-1M,42K-83K,1.4K-2.7K
+Savings Account Switching / Opening,0.7M-1.5M,58K-125K,1.9K-4.1K
+Very High-Intent / Near-Transactional,2M-5M,167K-417K,5.5K-13.7K
