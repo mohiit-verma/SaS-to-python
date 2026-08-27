@@ -692,3 +692,29 @@ Short-Term Cash Options,"where should I put $50K for 6 months",8%,0.88M,73K,2.4K
 Savings Account Switching / Opening,"best savings account to open, should I switch banks",7%,0.77M,64K,2.1K
 Other Deposit Shopping,"cash management, deposit alternatives, savings options",4%,0.44M,37K,1.2K
 TOTAL HIGH-INTENT DEPOSIT SHOPPING,All categories,100%,11.00M,917K,30.1K
+
+
+ChatGPT
+
+,Barclays,Ally,Synchrony,Marcus,Capital One,American Express,SoFi,CIT Bank
+Barclays,0,23,16,19,60,41,56,1
+Ally,23,0,30,34,89,67,85,12
+Synchrony,16,30,0,27,74,52,71,5
+Marcus,19,34,27,0,82,63,78,8
+Capital One,60,89,74,82,0,96,100,49
+American Express,41,67,52,63,96,0,93,38
+SoFi,56,85,71,78,100,93,0,45
+CIT Bank,1,12,5,8,49,38,45,0
+
+
+Claude
+
+,Barclays,Ally,Synchrony,Marcus,Capital One,American Express,SoFi,CIT Bank
+Barclays,0,52,12,45,27,16,23,1
+Ally,52,0,82,93,89,71,96,63
+Synchrony,12,82,0,38,74,60,41,5
+Marcus,45,93,38,0,56,49,85,19
+Capital One,27,89,74,56,0,100,78,34
+American Express,16,71,60,49,100,0,67,8
+SoFi,23,96,41,85,78,67,0,30
+CIT Bank,1,63,5,19,34,8,30,0
