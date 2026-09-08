@@ -214,3 +214,15 @@ top rate shopping banks in US
 I want the list of most mentioned saving product on Reddit, TrustPilot, depositaccounts.com doctor of credit between 2024 and 26 Provide the data in the following format: rank| number of threads:, bank: product: common themes: provide table for all this as the columns
 
 provide top 10 positive and top 10 negative hashtags for barclays between 2024 and 2026
+
+----------
+
+now give me the weightage for these ranks on following criteria
+
+APY  a%
+Liquidity and Features b%
+Fee and Restrictions c%
+Safety and Availability d%
+CX and Reputation e%
+
+give me the data in above format only
