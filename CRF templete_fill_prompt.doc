@@ -1,608 +1,5 @@
 
-You are helping me populate a CRF presentation deck.
 
-I will provide:
-1. A summary document containing the source information.
-2. A CRF deck template that already contains the correct structure and formatting.
-
-Your task is to populate the template using the summary document while keeping the template formatting completely intact.
-
-
-
-# Primary Objective
-Fill the CRF deck template with content derived from the summary document while strictly preserving the template’s formatting, layout, and structure.
-
-The template should remain visually unchanged — only the content inside placeholders should be replaced or completed.
-
-
-
-# Critical Formatting Rules (Highest Priority)
-
-You must NOT modify the template structure.
-
-Strictly preserve:
-- Slide order
-- Slide titles
-- Section headings
-- Layout structure
-- Placeholder positions
-- Tables and chart placeholders
-- Text boxes
-- Formatting style
-- Font hierarchy
-- Bullet levels
-- Visual layout
-- Design elements
-- Icons or labels
-- Any slide master formatting
-
-### Allowed Changes
-You may only:
-- Replace placeholder text
-- Insert content into existing bullet areas
-- Populate existing tables
-- Fill text boxes with relevant content
-
-### Not Allowed
-Do NOT:
-- Delete slides
-- Move sections
-- Change layouts
-- Modify slide formatting
-- Change title wording unless explicitly needed
-- Resize elements
-- Replace template visuals
-- Change slide design
-
-If a section cannot be populated due to missing information, leave the placeholder intact or mark it clearly.
-
-
-
-# Source of Truth
-The summary document is the only source of information.
-
-Rules:
-- Do not invent information.
-- Do not infer numbers or metrics.
-- Do not introduce claims not supported by the summary.
-- Do not add external knowledge.
-
-If the summary does not contain the information needed:
-- leave the placeholder text unchanged, OR
-- mark the field with `[Information not available in source]`.
-
-
-
-# Slide Content Guidelines
-
-Convert the summary content into presentation-ready slide text.
-
-Prefer:
-- concise bullet points
-- short statements
-- executive-friendly phrasing
-- structured information
-
-Avoid:
-- long paragraphs
-- narrative text
-- redundant content
-
-
-
-
-# Slide Mapping Process
-
-Follow this process:
-
-1. Review the CRF template slide by slide.
-2. Identify the intent of each slide.
-3. Locate the relevant information in the summary document.
-4. Convert the information into slide-appropriate content.
-5. Insert the content into the existing placeholders.
-
-Do not restructure the slide.
-
-
-
-# Handling Template Components
-
-## Bullet Slides
-Populate bullet placeholders with concise points derived from the summary.
-
-## Tables
-If a table exists in the template:
-- fill only the relevant cells
-- keep table formatting intact
-
-## Charts / Visual Layout Slides
-If a slide appears intended for a visual:
-- provide the textual inputs needed
-- do not fabricate numerical values
-
-## Framework Slides (2x2, process, etc.)
-Translate summary content into the framework structure.
-
-
-
-# Handling Corner Cases
-
-## Missing Information
-If the summary lacks required details:
-- leave placeholder text intact OR
-- add `[Information not available in source]`.
-
-## Conflicting Information
-If the summary has conflicting statements:
-- use the most explicit or well-supported statement
-- flag it as `[Potential inconsistency in source]`.
-
-## Overly Detailed Source Text
-Condense long explanations into concise slide bullets.
-
-## Repeated Content
-Consolidate repeated points to avoid duplication across slides.
-
-## Numbers and Metrics
-Preserve numbers exactly as written in the source.
-Do not calculate or estimate missing values.
-
-
-
-# Content Quality Rules
-
-Ensure that:
-- slides remain concise
-- content aligns with the slide purpose
-- terminology remains consistent across slides
-- no unsupported claims are introduced
-- the narrative across slides remains logical
-
-
-
-# Output Format
-
-Provide results in this structure:
-
-## Slide-by-Slide Content Mapping
-
-For each slide:
-
-Slide Number:  
-Slide Title:  
-Slide Objective:  
-Filled Content:  
-(insert the content intended for the placeholders)
-
-Notes:  
-- Missing information (if any)
-- Source inconsistencies (if any)
-
-
-
-## Missing Inputs
-List sections of the template that could not be populated due to missing information in the summary document.
-
-
-
-## Final Validation Checklist
-
-Confirm that:
-
-- Template formatting was preserved
-- No slide structure was modified
-- No unsupported content was added
-- Missing information was clearly flagged
-- Content is presentation-ready and concise
-- Terminology is consistent across slides
-
-
-
-----------------
-# CRF Proposal Deck → Concise Word Summary
-
-You are an expert document summarization assistant. Your task is to convert a CRF proposal PowerPoint deck into a highly concise Word document summary.
-
-The goal is to capture the essential content of each slide while preserving all numbers and metrics exactly as written.
-
-
-# Instructions
-
-## 1. Slide-by-Slide Processing
-Process the presentation in the exact order of slides.
-
-For every slide include:
-- Slide Number
-- Slide Title
-- Very concise bullet-point summary
-
-
-
-## 2. Preserve All Numerical Data
-All metrics, numbers, KPIs, percentages, financial values, dates, and benchmarks must be preserved exactly as written.
-
-Do NOT:
-- Round numbers
-- Estimate values
-- Change units
-- Reinterpret metrics
-
-If numbers appear in charts or tables, include them in the summary.
-
-
-## 3. Content to Capture (Concise Only)
-
-Capture only core business information, such as:
-
-- Key insights
-- Methodology
-- Scope / deliverables
-- Timeline
-- Assumptions
-- Key recommendations
-- Important metrics
-- Performance results
-
-Avoid expanding explanations.
-
-
-## 4. Charts, Graphs, and Visuals
-
-If a slide contains charts or graphs:
-
-- Extract the key takeaway
-- Preserve all visible numbers and labels
-- Convert insights into 1–2 concise bullets
-
-
-## 5. Tables
-
-Write table as it is with proper title while preserving numeric values.
-
-
-## 6. Do Not Add Extra Content
-
-Do NOT:
-- Add explanations
-- Add interpretations beyond the slide
-- Repeat slide text unnecessarily
-- Expand into paragraphs
-
-Keep the output compact and structured.
-
-
-# Output Format (Word Friendly)
-
-### Slide <Number>: <Slide Title>
-
-- Bullet point summary  
-- Bullet point summary  
-- Bullet point summary (optional)
-
-Key Data / Metrics (if present)  
-- Metric / value  
-- Metric / value
-
-
-# Output Requirements
-
-- Maintain exact slide order
-- Preserve all metrics and numbers exactly
-- Output must be clean and ready to paste into a Word document
-- Name the final doc with same title as of the deck.
-
-
-
-
-
-# CRF Deck → Word Summary Prompt
-
-You are given a well-structured CRF presentation deck containing text, headings, hierarchy, tables, charts, and diagrams.
-
-Your task is to generate a slide-by-slide structured summary in Word document format, ensuring the output can be directly used to populate a CRF deck template.
-
----
-
-## Instructions
-
-### 1. Slide-wise Structure
-- Process content slide by slide.
-- For each slide:
-  - Start with the exact slide title (do not modify, rephrase, or shorten).
-  - Maintain the original hierarchy exactly as is:
-    - Headings
-    - Subheadings
-    - Bullet levels
-    - Indentation structure
-
----
-
-### 2. Text Summarization
-- Summarize descriptive text clearly and concisely.
-- Preserve key messages, intent, and business meaning.
-- Do not introduce new information or interpretations.
-- Do not collapse or alter the hierarchy.
-
----
-
-### 3. Tables and Numerical Data (Critical)
-- Preserve tables EXACTLY as they appear in the input.
-- Do not:
-  - Modify wording
-  - Change values
-  - Reformat structure
-  - Reorder rows/columns
-  - Summarize or interpret data
-
-#### Table Handling Guidelines:
-- Reproduce tables in the same structure and layout:
-  - Same column headers
-  - Same row order
-  - Same cell content
-- Maintain:
-  - Alignment
-  - Grouping
-  - Any hierarchical relationships within the table
-- If multiple tables exist, keep them separate and in original order.
-- Ensure tables remain in tabular format only (never convert to text).
-
----
-
-### 4. Charts and Diagrams
-- Do not recreate visuals.
-- Provide:
-  - A concise summary of the insight or message conveyed.
-  - Include any explicit numbers, labels, or annotations exactly as shown.
-- If data is visible in the chart:
-  - Present it in table format without modification.
-
----
-
-### 5. Formatting Requirements (Word Ready)
-- Ensure output is structured for direct use in a Word document:
-  - Clear separation per slide
-  - Consistent formatting
-  - Proper indentation reflecting hierarchy
-- Keep slide sections clean and easy to transfer into CRF templates.
-
----
-
-### 6. Strict Constraints
-- Do not alter any headings or titles.
-- Do not change numerical values.
-- Do not modify table content or format in any way.
-- Do not convert tables into paragraphs.
-- Do not lose or restructure hierarchy.
-- Do not add assumptions, interpretations, or external context.
-
----
-
-## Output Format
-
-Slide Title (unchanged)  
-- Heading  
-  - Sub-point (summarized)  
-
-Table (exactly as in input):  
-(reproduce without any modification)
-
-Chart/Diagram Insight:  
-- Concise explanation of key takeaway  
-
----
-
-## Goal
-Produce a high-fidelity, structured summary that:
-- Retains exact tables and all numerical data  
-- Preserves full hierarchy and structure  
-- Enables seamless reuse in a CRF deck template  
-- Requires minimal to no manual correction  
-
-
-
-,Ally Bank,Barclays,Marcus,SoFi,Capital One,Discover,American Express,Apple Savings,CIT Bank,Synchrony
-Ally Bank,0,18,42,72,82,76,70,58,24,46
-Barclays,18,0,20,40,66,60,64,28,12,22
-Marcus,42,20,0,68,74,62,56,52,30,34
-SoFi,72,40,68,0,92,84,80,90,48,54
-Capital One,82,66,74,92,0,100,98,85,50,94
-Discover,76,60,62,84,100,0,95,78,44,88
-American Express,70,64,56,80,98,95,0,86,38,82
-Apple Savings,58,28,52,90,85,78,86,0,26,36
-CIT Bank,24,12,30,48,50,44,38,26,0,16
-Synchrony,46,22,34,54,94,88,82,36,16,0
-
-
-Gemini
-
-,Ally Bank,Barclays,Marcus,SoFi,Capital One,Discover,American Express,Apple Savings,CIT Bank,Synchrony,TD Bank,UMB Bank,Santander (OpenBank)
-Ally Bank,0,38,58,73,80,67,60,62,49,31,51,15,22
-Barclays,38,0,40,42,56,53,64,36,22,27,33,9,24
-Marcus,58,40,0,69,51,47,44,82,53,33,42,11,35
-SoFi,73,42,69,0,84,78,71,60,47,36,49,18,29
-Capital One,80,56,51,84,0,98,96,76,42,62,71,20,38
-Discover,67,53,47,78,98,0,93,56,31,71,64,13,27
-American Express,60,64,44,71,96,93,0,64,24,67,58,11,31
-Apple Savings,62,36,82,60,76,56,64,0,40,29,44,15,40
-CIT Bank,49,22,53,47,42,31,24,40,0,18,27,7,18
-Synchrony,31,27,33,36,62,71,67,29,18,0,36,13,15
-TD Bank,51,33,42,49,71,64,58,44,27,36,0,11,20
-UMB Bank,15,9,11,18,20,13,11,15,7,13,11,0,4
-Santander (OpenBank),22,24,35,29,38,27,31,40,18,15,20,4,0
-
-ChatGPT
-,Ally Bank,Barclays,Marcus,SoFi,Capital One,Discover,American Express,Apple Savings,CIT Bank,Synchrony,TD Bank,UMB Bank,Santander (OpenBank)
-Ally Bank,0,15,38,68,80,74,70,56,21,44,72,12,48
-Barclays,15,0,18,36,64,58,62,26,10,20,54,8,66
-Marcus,38,18,0,64,72,60,54,50,28,32,58,14,42
-SoFi,68,36,64,0,92,84,78,90,46,52,76,24,60
-Capital One,80,64,72,92,0,100,98,86,48,94,88,30,82
-Discover,74,58,60,84,100,0,96,80,42,90,82,26,74
-American Express,70,62,54,78,98,96,0,84,36,80,78,22,70
-Apple Savings,56,26,50,90,86,80,84,0,24,34,66,18,46
-CIT Bank,21,10,28,46,48,42,36,24,0,14,32,6,20
-Synchrony,44,20,32,52,94,90,80,34,14,0,62,16,40
-TD Bank,72,54,58,76,88,82,78,66,32,62,0,28,92
-UMB Bank,12,8,14,24,30,26,22,18,6,16,28,0,10
-Santander (OpenBank),48,66,42,60,82,74,70,46,20,40,92,10,0
-
-
-Gemini Loans
-
-
-,SoFi,Wells Fargo,U.S. Bank,Discover,LendingClub,Upgrade,Upstart,LightStream,Best Egg,PenFed
-SoFi,0,84,72,88,96,92,90,45,70,62
-Wells Fargo,84,0,78,76,71,69,67,49,53,58
-U.S. Bank,72,78,0,65,60,58,56,42,47,51
-Discover,88,76,65,0,84,80,78,42,65,58
-LendingClub,96,71,60,84,0,89,91,51,75,60
-Upgrade,92,69,58,80,89,0,85,47,73,56
-Upstart,90,67,56,78,91,85,0,43,68,53
-LightStream,45,49,42,42,51,47,43,0,38,48
-Best Egg,70,53,47,65,75,73,68,38,0,44
-PenFed,62,58,51,58,60,56,53,48,44,0
-
-ChatGPT Personal Loans
-
-,SoFi,Wells Fargo,U.S. Bank,Discover,LendingClub,Upgrade,Upstart,LightStream,Best Egg,PenFed
-SoFi,0,88,74,82,90,96,100,92,80,68
-Wells Fargo,88,0,94,86,60,58,66,72,50,76
-U.S. Bank,74,94,0,78,48,46,54,62,40,82
-Discover,82,86,78,0,72,70,76,80,60,64
-LendingClub,90,60,48,72,0,94,86,68,78,44
-Upgrade,96,58,46,70,94,0,98,74,88,42
-Upstart,100,66,54,76,86,98,0,76,82,50
-LightStream,92,72,62,80,68,74,76,0,56,70
-Best Egg,80,50,40,60,78,88,82,56,0,36
-PenFed,68,76,82,64,44,42,50,70,36,0
-
-
-claude + ChatGPT
-
-,Barclays,Ally Bank,Synchrony,Marcus,Capital One,American Express,SoFi,CIT Bank
-Barclays,0,18,43,12,57,56,36,8
-Ally Bank,18,0,37,68,72,57,80,60
-Synchrony,43,37,0,27,81,73,42,17
-Marcus,12,68,27,0,63,52,71,39
-Capital One,57,72,81,63,0,100,89,50
-American Express,56,57,73,52,100,0,68,37
-SoFi,36,80,42,71,89,68,0,42
-CIT Bank,8,60,17,39,50,37,42,0
-
-
-
-
-Here is the complete prompt structured for this dataset exercise:
-
-You are a financial data analyst specializing in digital search behavior and brand visibility metrics.
-
-Your task is to analyze the relative Google search popularity of the following US financial institutions for loans.
-
-Banks/Lenders:
-
-1. SoFi
-
-2. Wells Fargo
-
-3. U.S. Bank
-
-4. Discover
-
-5. LendingClub
-
-6. Upgrade
-
-7. Upstart
-
-8. LightStream
-
-9. Best Egg
-
-10. PenFed
-
-Your Task:
-
-Step 1: Estimate pairwise search volume
-For every unique brand pair (i, j) where i ≠ j, independently estimate the combined Google search volume when both brands are searched together or compared for loans/credit products. This gives you a raw search volume estimate for each of the 45 unique pairs.
-
-Step 2: Rank order and score
-Once you have raw search volume estimates for all 45 unique pairs, rank order them from lowest to highest and rescale them to a score between 1–100, where:
-
-* The pair with the lowest combined search volume gets a score closest to 1
-
-* The pair with the highest combined search volume gets a score closest to 100
-
-* All other pairs are scored proportionally in between based on their rank
-
-Step 3: Build the matrix
-Populate a 10×10 symmetric matrix using the rescaled scores where:
-
-* cell[i][j] = rescaled score for the pair (i, j)
-
-* cell[i][i] = 0 (same institution compared to itself)
-
-* cell[i][j] = cell[j][i] always (fully symmetric)
-
-Output format (strict):
-Respond with ONLY the following CSV — no explanation, no markdown, no extra text, no code fences.
-
-The first row must be a header with a blank first cell followed by all 10 institution names.
-Each subsequent row must start with the institution name, followed by 10 comma-separated integer scores.
-
-,SoFi,Wells Fargo,U.S. Bank,Discover,LendingClub,Upgrade,Upstart,LightStream,Best Egg,PenFed
-SoFi,0,,,,,,,,,
-Wells Fargo,,0,,,,,,,,
-U.S. Bank,,,0,,,,,,,
-Discover,,,,0,,,,,,
-LendingClub,,,,,0,,,,,
-Upgrade,,,,,,0,,,,
-Upstart,,,,,,,0,,,
-LightStream,,,,,,,,0,,
-Best Egg,,,,,,,,,0,
-PenFed,,,,,,,,,,0
-
-Rules:
-
-* Diagonal must always be 0
-
-* Matrix must be perfectly symmetric: row i col j = row j col i
-
-* All scores must be integers between 1 and 100
-
-* Scoring is based on rank order of pairwise search volume estimates, not individual brand popularity
-
-* No extra text, headers, or explanation outside the CSV block
-
-
-
-
-execute above prompt for following banks
-barclays, ally, synchrony, marcus, capital one, american express, SoFi, CIT Bank
-
-
-claude
-
-,Barclays,Ally,Synchrony,Marcus,Capital One,American Express,SoFi,CIT Bank
-Barclays,0,41,8,23,45,30,27,1
-Ally,41,0,78,96,100,85,89,38
-Synchrony,8,78,0,49,67,56,52,5
-Marcus,23,96,49,0,74,71,63,12
-Capital One,45,100,67,74,0,93,82,34
-American Express,30,85,56,71,93,0,60,16
-SoFi,27,89,52,63,82,60,0,19
-CIT Bank,1,38,5,12,34,16,19,0
-
-
-ChatGPT
-,Barclays,Ally,Synchrony,Marcus,Capital One,American Express,SoFi,CIT Bank
-Barclays,0,30,27,16,67,49,38,1
-Ally,30,0,56,41,93,78,71,12
-Synchrony,27,56,0,34,89,74,63,8
-Marcus,16,41,34,0,82,60,52,5
-Capital One,67,93,89,82,0,100,96,45
-American Express,49,78,74,60,100,0,85,23
-SoFi,38,71,63,52,96,85,0,19
-CIT Bank,1,12,8,5,45,23,19,0
 
 You are a search-demand analyst supporting competitive strategy for a 
 retail bank.
@@ -727,66 +124,93 @@ HYSA Claude	8	16	3	4	12	6	9	10	14	22	28	30	29
 Rate Shopping Claude		19	3				1		25	34	26	15	8
 CD Shopping Claude		19	75			61		45	25	34	26	15	8
 
+Banks heatmap
 
-doc + reddit
+You are a financial data analyst specializing in digital search behavior and brand visibility metrics.
 
-| Rank | Approx. number of threads/discussions | Bank                    | Product                                | Common themes                                                                                                                         |
-| ---: | ------------------------------------: | ----------------------- | -------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
-|    1 |                               ~1,000+ | Capital One             | 360 Performance Savings                | APY competitiveness, no-fee banking, easy transfers, branch access, 360 ecosystem, old 360 Savings vs Performance Savings controversy |
-|    2 |                                 ~900+ | Ally Bank               | Ally High-Yield Savings                | APY, buckets, savings automation, customer service, account freezes, transfers, rate reductions                                       |
-|    3 |                                 ~850+ | SoFi                    | SoFi Checking & Savings                | High APY, direct-deposit requirement, Vaults, checking+savings combination, bonuses, mobile app                                       |
-|    4 |                                 ~700+ | Marcus by Goldman Sachs | Marcus High-Yield Online Savings       | Competitive APY, savings bonuses, easy account setup, transfers, customer service/account-access complaints                           |
-|    5 |                                 ~600+ | Discover                | Discover Online Savings                | APY changes, customer service, bonuses, established-bank reputation, Capital One acquisition                                          |
-|    6 |                                 ~450+ | American Express        | Amex High Yield Savings                | Strong reputation, competitive APY, customer service, rate-change notifications, relationship with Amex cards                         |
-|    7 |                                 ~400+ | Wealthfront             | Cash Account / High-Yield Cash Account | High APY, referral boosts, fast transfers, FDIC sweep structure, fintech concerns, account-access/customer-service issues             |
-|    8 |                                 ~300+ | CIT Bank                | Platinum Savings / Savings Connect     | High APY, minimum-balance requirements, rate chasing, transfer experience                                                             |
-|    9 |                                 ~250+ | Synchrony Bank          | High-Yield Savings                     | Competitive APY, no monthly fee, online banking, rate changes, customer service                                                       |
-|   10 |                                 ~200+ | Barclays                | Online Savings                         | Competitive APY, established online bank, rate changes, transfer speed, customer service                                              |
-|   11 |                                 ~175+ | Vio Bank                | Cornerstone Money Market / Savings     | Very competitive APY, lesser-known institution, rate chasing, transfer experience                                                     |
-|   12 |                                 ~150+ | LendingClub Bank        | LevelUp Savings                        | High APY, balance/eligibility requirements, customer service, rate competitiveness                                                    |
-|   13 |                                 ~125+ | American Express        | High Yield Savings / HYSA bonuses      | Bonus offers, APY, Amex ecosystem, customer service, ease of use                                                                      |
-|   14 |                                 ~100+ | UFB Direct              | UFB High Yield Savings                 | Very high promotional APY, rate reductions, minimum requirements, customer service                                                    |
-|   15 |                                 ~100+ | Bask Bank               | Bask Interest Savings                  | Competitive APY, stability of rates, no-fee structure, lesser-known bank, transfer experience                                         |
+Your task is to analyze the **relative Google search popularity** of the following US financial institutions for loans.
+
+**Banks/Lenders:**
+
+1. SoFi
+2. Wells Fargo
+3. U.S. Bank
+4. Discover
+5. LendingClub
+6. Upgrade
+7. Upstart
+8. LightStream
+9. Best Egg
+10. PenFed
+
+---
+
+**Your Task:**
+
+**Step 1: Estimate pairwise search volume**
+For every unique brand pair (i, j) where i ≠ j, independently estimate the combined Google search volume when both brands are searched together or compared for loans/credit products. This gives you a raw search volume estimate for each of the 45 unique pairs.
+
+**Step 2: Rank order and score**
+Once you have raw search volume estimates for all 45 unique pairs, rank order them from lowest to highest and rescale them to a score between 1–100, where:
+
+* The pair with the **lowest** combined search volume gets a score closest to **1**
+* The pair with the **highest** combined search volume gets a score closest to **100**
+* All other pairs are scored **proportionally** in between based on their rank
+
+**Step 3: Build the matrix**
+Populate a 10×10 symmetric matrix using the rescaled scores where:
+
+* **cell[i][j]** = rescaled score for the pair (i, j)
+* **cell[i][i]** = 0 (same institution compared to itself)
+* **cell[i][j]** = **cell[j][i]** always (fully symmetric)
+
+---
+
+**Output format (strict):**
+Respond with ONLY the following CSV — no explanation, no markdown, no extra text, no code fences.
+
+The first row must be a header with a blank first cell followed by all 10 institution names.
+Each subsequent row must start with the institution name, followed by 10 comma-separated integer scores.
+
+,SoFi,Wells Fargo,U.S. Bank,Discover,LendingClub,Upgrade,Upstart,LightStream,Best Egg,PenFed
+SoFi,0,,,,,,,,,
+Wells Fargo,,0,,,,,,,,
+U.S. Bank,,,0,,,,,,,
+Discover,,,,0,,,,,,
+LendingClub,,,,,0,,,,,
+Upgrade,,,,,,0,,,,
+Upstart,,,,,,,0,,,
+LightStream,,,,,,,,0,,
+Best Egg,,,,,,,,,0,
+PenFed,,,,,,,,,,0
+
+---
+
+**Rules:**
+
+* Diagonal must always be 0
+* Matrix must be perfectly symmetric: row i col j = row j col i
+* All scores must be integers between 1 and 100
+* Scoring is based on rank order of pairwise search volume estimates, not individual brand popularity
+* No extra text, headers, or explanation outside the CSV block
 
 
+ranking Queries
+
+best HYSA in US/ 
+
+I want the approximate rank and the rank from above table for the following banks 
+use the above ranks for the banks which are available in above list 
+for the remaining banks give me ranks from top 40 banks in US
+provide data in CSV as banks, rank
+| Forbright CIT Axos Newtek Wealthfront Vio LendingClub SoFi Barclays Synchrony Ally   Bank Amex Capital one |
+| ---------------------------------------------------------------------------------------------------------- |
 
 
-| Rank | Positive hashtags     | Negative hashtags            |
-| ---: | --------------------- | ---------------------------- |
-|    1 | **#HighAPY**          | **#APYDrop**                 |
-|    2 | **#SavingsBonus**     | **#AccountLockout**          |
-|    3 | **#NoMonthlyFees**    | **#ClunkyApp**               |
-|    4 | **#CompetitiveRates** | **#PoorTransfers**           |
-|    5 | **#FDICInsured**      | **#CustomerServiceIssues**   |
-|    6 | **#LargeBank**        | **#NoWireTransfers**         |
-|    7 | **#NoMinimumBalance** | **#LongVerification**        |
-|    8 | **#AARPSavings**      | **#LargeDepositRequirement** |
-|    9 | **#SimpleSavings**    | **#LimitedBankingFeatures**  |
-|   10 | **#BonusOpportunity** | **#RateChasing**             |
+top CD shopping banks in US
 
+top rate shopping banks in US
 
+I want the list of most mentioned saving product on Reddit, TrustPilot, depositaccounts.com doctor of credit between 2024 and 26 Provide the data in the following format: rank| number of threads:, bank: product: common themes: provide table for all this as the columns
 
-social media
-
-| Rank | Number of threads (estimated) | Bank                    | Product                          | Common themes                                                                          |
-| ---: | ----------------------------: | ----------------------- | -------------------------------- | -------------------------------------------------------------------------------------- |
-|    1 |                       ~35,000 | SoFi                    | Checking & Savings / HYSA        | High APY, direct deposit requirement, checking+savings combination, app, FDIC coverage |
-|    2 |                       ~31,000 | Wealthfront             | Cash Account                     | High APY, automatic savings, easy transfers, FDIC coverage, app experience             |
-|    3 |                       ~29,000 | Ally Bank               | Online Savings                   | Savings buckets, no fees, customer service, app, APY comparisons                       |
-|    4 |                       ~27,000 | Marcus by Goldman Sachs | High-Yield Online Savings        | Competitive APY, Goldman Sachs reputation, no fees, savings vs CD                      |
-|    5 |                       ~24,000 | Capital One             | 360 Performance Savings          | No fees, Capital One ecosystem, branches, HYSA vs traditional banks                    |
-|    6 |                       ~21,000 | Amex                    | High-Yield Savings               | Brand trust, APY, FDIC insurance, customer service, ease of opening                    |
-|    7 |                       ~18,000 | Discover                | Online Savings                   | Trust, no-fee savings, Discover ecosystem, APY                                         |
-|    8 |                       ~16,000 | CIT Bank                | Platinum Savings                 | High APY, minimum balance, online bank, rate chasing                                   |
-|    9 |                       ~14,000 | Synchrony               | High-Yield Savings               | High APY, online banking, CD alternatives, no minimum                                  |
-|   10 |                       ~12,000 | Barclays                | Online Savings                   | Competitive APY, established bank, savings vs CD                                       |
-|   11 |                       ~11,000 | Vio Bank                | High-Yield Savings               | Very high APY, rate comparisons, online-only bank, FDIC                                |
-
-
-| Rank | Positive hashtags   | Negative hashtags    |
-| ---: | ------------------- | -------------------- |
-|    1 | #HighYieldSavings   | #BankFees            |
-|    2 | #BestSavingsAccount | #LowAPY              |
-|    3 | #SavingsGoals       | #BankProblems        |
-|    4 | #EarnMoreInterest   | #PoorCustomerService |
-|    5 | #FinancialFreedom   | #RateDrop            |
+provide top 10 positive and top 10 negative hashtags for barclays between 2024 and 2026
