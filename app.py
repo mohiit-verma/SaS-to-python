@@ -4,18 +4,33 @@ from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
 from datetime import datetime
+import re
 import statistics
 import textwrap
 
+import logging
 import openpyxl
 import pandas as pd
 import html
 import streamlit as st
 import streamlit.components.v1 as components
 
+_AUDIT_ENABLED = False   # set True only during development
+
+# ============================================================
+# Logging Configuration
+# ============================================================
+
+logging.basicConfig(
+    level=logging.WARNING,
+    format="%(asctime)s [%(levelname)s] %(name)s: %(message)s",
+    datefmt="%Y-%m-%d %H:%M:%S",
+)
+logger = logging.getLogger("prompt_library")
+
 st.set_page_config(
     page_title="Banking Analytics Prompt Library",
-#     page_icon="📚",
+    page_icon="📚",
 #     layout="wide",
 )
 # ============================================================
@@ -88,29 +103,167 @@ class PromptExcelLoader:
     @classmethod
     def load_from_excel(cls, file_path: str) -> List[PromptRecord]:
         path = Path(file_path)
+        logger.info("Loading prompts from Excel: %s", path.resolve())
+
         if not path.exists():
+            logger.warning("Excel file not found: %s — skipping Excel load", path.resolve())
             return []
 
         dataframe = pd.read_excel(path, sheet_name=PROMPTS_SHEET_NAME)
         dataframe.columns = [str(col).strip() for col in dataframe.columns]
+        logger.info("Excel sheet '%s' loaded — %d raw rows, %d columns", PROMPTS_SHEET_NAME, len(dataframe), len(dataframe.columns))
 
         missing_columns = [col for col in cls.REQUIRED_COLUMNS if col not in dataframe.columns]
         if missing_columns:
+            logger.error("Validation failed — missing required columns: %s", missing_columns)
             raise ValueError(f"Missing required Excel columns: {', '.join(missing_columns)}")
 
+        cls._audit_dataframe(dataframe)
+
         records: List[PromptRecord] = []
-        for _, row in dataframe.iterrows():
-            record = cls._row_to_prompt_record(row)
+        skipped = 0
+        for excel_row_num, (_, row) in enumerate(dataframe.iterrows(), start=2):  # 2: header is row 1
+            record = cls._row_to_prompt_record(row, row_index=excel_row_num)
             if record:
                 records.append(record)
+            else:
+                skipped += 1
+
+        logger.info("Prompt load complete — %d valid records, %d rows skipped", len(records), skipped)
         return records
 
+    # ----------------------------------------------------------
+    # Data Completeness & Filling-Issue Audit
+    # ----------------------------------------------------------
+
+    _MIN_PROMPT_LENGTH = 20   # prompts shorter than this are likely placeholder/truncated
+
     @classmethod
-    def _row_to_prompt_record(cls, row: pd.Series) -> Optional[PromptRecord]:
+    def _audit_dataframe(cls, df: pd.DataFrame) -> None:
+        """
+        Runs a full data-quality audit on the raw DataFrame and logs every
+        issue found.  Does not raise — the caller decides whether to proceed.
+
+        Checks performed:
+        1. Column fill-rate  — % of non-null, non-empty values per required column
+        2. Duplicate Prompt IDs
+        3. Duplicate Prompt Names
+        4. Prompt template too short   (likely truncated / not filled in)
+        5. Prompt template has no {placeholder} variables while Required Inputs are listed
+        6. Required Inputs cell filled but Prompt column empty
+        7. Tags/Labels completely missing
+        8. Sample Output (expected result) missing
+        """
+
+        if not _AUDIT_ENABLED:
+            return
+        total = len(df)
+        if total == 0:
+            logger.warning("Data audit — sheet is empty, nothing to audit")
+            return
+
+        logger.info("=== Data Completeness Audit — %d rows ===", total)
+
+        # 1. Column fill-rate
+        for col in cls.REQUIRED_COLUMNS:
+            if col not in df.columns:
+                continue  # already caught by column-existence check
+            filled = df[col].apply(
+                lambda v: pd.notna(v) and str(v).strip() != ""
+            ).sum()
+            pct = filled / total * 100
+            level = logging.INFO if pct >= 90 else (logging.WARNING if pct >= 50 else logging.ERROR)
+            logger.log(level, "  Fill rate  %-22s %3d / %d rows filled  (%.1f%%)",
+                       f"'{col}':", filled, total, pct)
+
+        # 2. Duplicate Prompt IDs
+        id_col = df["Prompt ID"].dropna()
+        duplicate_ids = id_col[id_col.duplicated(keep=False)]
+        if not duplicate_ids.empty:
+            dup_values = sorted(duplicate_ids.unique().tolist())
+            logger.error("  Duplicate Prompt IDs found — %s (affects %d rows)", dup_values, len(duplicate_ids))
+        else:
+            logger.info("  Duplicate Prompt IDs: none")
+
+        # 3. Duplicate Prompt Names
+        name_col = df["Prompt Name"].dropna().apply(lambda v: str(v).strip()).replace("", pd.NA).dropna()
+        duplicate_names = name_col[name_col.duplicated(keep=False)]
+        if not duplicate_names.empty:
+            dup_name_values = sorted(duplicate_names.unique().tolist())
+            logger.warning("  Duplicate Prompt Names found — %s", dup_name_values)
+        else:
+            logger.info("  Duplicate Prompt Names: none")
+
+        # 4 & 5 & 6. Per-row prompt-template quality checks
+        short_prompts: List[int] = []          # Excel row numbers (1-based, including header)
+        no_placeholder_mismatch: List[int] = []
+        inputs_but_empty_prompt: List[int] = []
+        missing_tags: List[int] = []
+        missing_sample_output: List[int] = []
+
+        placeholder_pattern = re.compile(r"\{[^}]+\}")
+
+        for excel_row, (_, row) in enumerate(df.iterrows(), start=2):
+            prompt_text = str(row.get("Prompt", "") or "").strip()
+            inputs_text = str(row.get("Required Inputs", "") or "").strip()
+            tags_text   = str(row.get("Tags/Labels", "") or "").strip()
+            output_text = str(row.get("Sample Output", "") or "").strip()
+
+            # 4. Short / stub prompt
+            if prompt_text and len(prompt_text) < cls._MIN_PROMPT_LENGTH:
+                short_prompts.append(excel_row)
+
+            # 5. Required inputs listed but no {placeholder} in prompt
+            if inputs_text and prompt_text and not placeholder_pattern.search(prompt_text):
+                no_placeholder_mismatch.append(excel_row)
+
+            # 6. Required inputs filled but prompt entirely empty
+            if inputs_text and not prompt_text:
+                inputs_but_empty_prompt.append(excel_row)
+
+            # 7. No tags
+            if not tags_text or tags_text.lower() in ("nan", "none", "-"):
+                missing_tags.append(excel_row)
+
+            # 8. Missing sample output
+            if not output_text or output_text.lower() in ("nan", "none", "-"):
+                missing_sample_output.append(excel_row)
+
+        if short_prompts:
+            logger.warning("  Short/stub prompts (< %d chars) at Excel rows: %s",
+                           cls._MIN_PROMPT_LENGTH, short_prompts)
+        else:
+            logger.info("  Short/stub prompts: none")
+
+        if no_placeholder_mismatch:
+            logger.warning(
+                "  Placeholder mismatch — 'Required Inputs' filled but no {var} in 'Prompt' at rows: %s",
+                no_placeholder_mismatch,
+            )
+        else:
+            logger.info("  Placeholder mismatches: none")
+
+        if inputs_but_empty_prompt:
+            logger.error(
+                "  'Required Inputs' filled but 'Prompt' is empty at rows: %s",
+                inputs_but_empty_prompt,
+            )
+
+        if missing_tags:
+            logger.warning("  Missing Tags/Labels at %d row(s): rows %s", len(missing_tags), missing_tags)
+
+        if missing_sample_output:
+            logger.warning("  Missing Sample Output at %d row(s): rows %s", len(missing_sample_output), missing_sample_output)
+
+        logger.info("=== Data Completeness Audit complete ===")
+
+    @classmethod
+    def _row_to_prompt_record(cls, row: pd.Series, row_index: int = 0) -> Optional[PromptRecord]:
         prompt_id = cls._safe_int(row.get("Prompt ID"))
         prompt_name = cls._safe_text(row.get("Prompt Name"))
 
         if prompt_id is None or not prompt_name:
+            logger.warning("Row %d skipped — missing Prompt ID (%s) or Prompt Name (%s)", row_index, prompt_id, repr(prompt_name))
             return None
 
         category = cls._safe_text(row.get("Category")) or "Uncategorized"
@@ -119,9 +272,18 @@ class PromptExcelLoader:
         prompt_template = cls._safe_text(row.get("Prompt"))
         expected_result = cls._safe_text(row.get("Sample Output"))
 
+        if not prompt_template:
+            logger.warning("Row %d (ID=%d, name=%r) — 'Prompt' column is empty", row_index, prompt_id, prompt_name)
+
+        if not prompt_objective:
+            logger.warning("Row %d (ID=%d, name=%r) — 'Prompt Objective' is empty", row_index, prompt_id, prompt_name)
+
         required_inputs, optional_inputs = cls._parse_inputs(
             cls._safe_text(row.get("Required Inputs"))
         )
+
+        logger.debug("Row %d parsed — ID=%d, name=%r, category=%r, tags=%s, required_inputs=%d, optional_inputs=%d",
+                     row_index, prompt_id, prompt_name, category, tags, len(required_inputs), len(optional_inputs))
 
         return PromptRecord(
             id=prompt_id,
@@ -219,15 +381,18 @@ def ensure_feedback_sheets_exist(file_path: str) -> None:
     """
     path = Path(file_path)
     if not path.exists():
+        logger.warning("ensure_feedback_sheets_exist: file not found — %s", path.resolve())
         return
 
     workbook = openpyxl.load_workbook(path)
 
     if RATINGS_SHEET_NAME not in workbook.sheetnames:
+        logger.info("Creating missing sheet '%s' in %s", RATINGS_SHEET_NAME, path.name)
         rating_sheet = workbook.create_sheet(RATINGS_SHEET_NAME)
         rating_sheet.append(["Prompt ID", "Rating", "Created At"])
 
     if COMMENTS_SHEET_NAME not in workbook.sheetnames:
+        logger.info("Creating missing sheet '%s' in %s", COMMENTS_SHEET_NAME, path.name)
         comment_sheet = workbook.create_sheet(COMMENTS_SHEET_NAME)
         comment_sheet.append(["Prompt ID", "Comment", "Created At"])
 
@@ -244,21 +409,31 @@ def load_feedback_from_excel(file_path: str) -> Tuple[Dict[int, List[int]], Dict
 
     path = Path(file_path)
     if not path.exists():
+        logger.warning("load_feedback_from_excel: file not found — %s", path.resolve())
         return ratings_map, comments_map
 
+    logger.info("Loading feedback from: %s", path.resolve())
     ensure_feedback_sheets_exist(file_path)
 
     try:
         ratings_df = pd.read_excel(path, sheet_name=RATINGS_SHEET_NAME)
+        invalid_ratings = 0
         if not ratings_df.empty:
             for _, row in ratings_df.iterrows():
                 prompt_id = row.get("Prompt ID")
                 rating = row.get("Rating")
                 if pd.notna(prompt_id) and pd.notna(rating):
                     pid = int(prompt_id)
-                    ratings_map.setdefault(pid, []).append(int(rating))
+                    r = int(rating)
+                    if r < 1 or r > 5:
+                        logger.warning("Ratings sheet — invalid rating value %d for Prompt ID %d (expected 1–5), skipping", r, pid)
+                        invalid_ratings += 1
+                        continue
+                    ratings_map.setdefault(pid, []).append(r)
+        total_ratings = sum(len(v) for v in ratings_map.values())
+        logger.info("Ratings loaded — %d entries across %d prompts (%d invalid skipped)", total_ratings, len(ratings_map), invalid_ratings)
     except Exception as exc:
-        print(f"[WARN] Failed to load ratings: {exc}")
+        logger.error("Failed to load ratings sheet: %s", exc)
 
     try:
         comments_df = pd.read_excel(path, sheet_name=COMMENTS_SHEET_NAME)
@@ -268,29 +443,54 @@ def load_feedback_from_excel(file_path: str) -> Tuple[Dict[int, List[int]], Dict
                 comment = row.get("Comment")
                 if pd.notna(prompt_id) and pd.notna(comment):
                     pid = int(prompt_id)
-                    comments_map.setdefault(pid, []).append(str(comment).strip())
+                    text = str(comment).strip()
+                    if not text:
+                        logger.warning("Comments sheet — empty comment for Prompt ID %d, skipping", pid)
+                        continue
+                    comments_map.setdefault(pid, []).append(text)
+        total_comments = sum(len(v) for v in comments_map.values())
+        logger.info("Comments loaded — %d entries across %d prompts", total_comments, len(comments_map))
     except Exception as exc:
-        print(f"[WARN] Failed to load comments: {exc}")
+        logger.error("Failed to load comments sheet: %s", exc)
 
     return ratings_map, comments_map
 
 
+_MAX_COMMENT_LENGTH = 1000
+
+
 def append_rating_to_excel(file_path: str, prompt_id: int, rating: int) -> None:
+    if not isinstance(prompt_id, int) or prompt_id <= 0:
+        raise ValueError(f"Invalid prompt_id: {prompt_id!r} — must be a positive integer")
+    if not isinstance(rating, int) or rating < 1 or rating > 5:
+        raise ValueError(f"Invalid rating: {rating!r} — must be an integer between 1 and 5")
+
+    logger.info("Appending rating — prompt_id=%d, rating=%d", prompt_id, rating)
     ensure_feedback_sheets_exist(file_path)
     workbook = openpyxl.load_workbook(file_path)
     sheet = workbook[RATINGS_SHEET_NAME]
     sheet.append([prompt_id, rating, datetime.now().isoformat(timespec="seconds")])
     workbook.save(file_path)
     workbook.close()
+    logger.info("Rating saved to Excel successfully — prompt_id=%d", prompt_id)
 
 
 def append_comment_to_excel(file_path: str, prompt_id: int, comment: str) -> None:
+    if not isinstance(prompt_id, int) or prompt_id <= 0:
+        raise ValueError(f"Invalid prompt_id: {prompt_id!r} — must be a positive integer")
+    if not comment or not comment.strip():
+        raise ValueError("Comment cannot be empty")
+    if len(comment) > _MAX_COMMENT_LENGTH:
+        raise ValueError(f"Comment exceeds maximum length of {_MAX_COMMENT_LENGTH} characters (got {len(comment)})")
+
+    logger.info("Appending comment — prompt_id=%d, length=%d chars", prompt_id, len(comment))
     ensure_feedback_sheets_exist(file_path)
     workbook = openpyxl.load_workbook(file_path)
     sheet = workbook[COMMENTS_SHEET_NAME]
     sheet.append([prompt_id, comment, datetime.now().isoformat(timespec="seconds")])
     workbook.save(file_path)
     workbook.close()
+    logger.info("Comment saved to Excel successfully — prompt_id=%d", prompt_id)
     
 # ============================================================
 # Repository Layer
@@ -343,30 +543,36 @@ class PromptRepository:
         return sorted(results, key=lambda p: p.name.lower())
 
     def add_rating(self, prompt_id: int, rating: int) -> bool:
+        logger.info("add_rating — prompt_id=%d, rating=%d", prompt_id, rating)
         prompt = self.get_by_id(prompt_id)
         if not prompt:
+            logger.warning("add_rating — prompt_id=%d not found in repository", prompt_id)
             return False
 
         prompt.ratings.append(rating)
+        logger.debug("In-memory rating updated — prompt_id=%d now has %d rating(s)", prompt_id, len(prompt.ratings))
 
         try:
             append_rating_to_excel(EXCEL_FILE_PATH, prompt_id, rating)
         except Exception as exc:
-            print(f"[WARN] Failed to write rating to Excel: {exc}")
+            logger.error("Failed to persist rating to Excel — prompt_id=%d: %s", prompt_id, exc)
 
         return True
 
     def add_comment(self, prompt_id: int, comment: str) -> bool:
+        logger.info("add_comment — prompt_id=%d, length=%d chars", prompt_id, len(comment))
         prompt = self.get_by_id(prompt_id)
         if not prompt:
+            logger.warning("add_comment — prompt_id=%d not found in repository", prompt_id)
             return False
 
         prompt.comments.append(comment)
+        logger.debug("In-memory comment added — prompt_id=%d now has %d comment(s)", prompt_id, len(prompt.comments))
 
         try:
             append_comment_to_excel(EXCEL_FILE_PATH, prompt_id, comment)
         except Exception as exc:
-            print(f"[WARN] Failed to write comment to Excel: {exc}")
+            logger.error("Failed to persist comment to Excel — prompt_id=%d: %s", prompt_id, exc)
 
         return True
 
@@ -650,6 +856,7 @@ def load_prompt_data() -> List[PromptRecord]:
     Tries Excel first, then falls back to sample seed prompts.
     Also loads Ratings and Comments sheets from the same Excel file.
     """
+    logger.info("load_prompt_data — attempting Excel source: %s", EXCEL_FILE_PATH)
     try:
         excel_records = PromptExcelLoader.load_from_excel(EXCEL_FILE_PATH)
         if excel_records:
@@ -660,17 +867,24 @@ def load_prompt_data() -> List[PromptRecord]:
                 record.ratings = ratings_map.get(record.id, [])
                 record.comments = comments_map.get(record.id, [])
 
+            logger.info("load_prompt_data — loaded %d prompts from Excel", len(excel_records))
             return excel_records
+
+        logger.warning("load_prompt_data — Excel returned 0 records, falling back to seed data")
     except Exception as exc:
-        print(f"[WARN] Failed to load Excel data: {exc}")
+        logger.error("load_prompt_data — Excel load failed (%s), falling back to seed data", exc)
 
-    return get_seed_prompts()
+    seed = get_seed_prompts()
+    logger.info("load_prompt_data — using %d seed prompt(s)", len(seed))
+    return seed
 
 
-@st.cache_resource
 def get_app_service() -> PromptService:
+    logger.info("Initializing PromptService and PromptRepository")
     repository = PromptRepository(seed_data=load_prompt_data())
-    return PromptService(repository)
+    service = PromptService(repository)
+    logger.info("PromptService ready — %d prompt(s) in repository", len(repository.list_all()))
+    return service
 
 
 # ============================================================
@@ -869,9 +1083,9 @@ with tab_library:
             rating_submitted = st.form_submit_button("Submit Rating")
             if rating_submitted:
                 message = service.submit_rating(selected_prompt_id, rating_value)
-                get_app_service.clear()
+                # get_app_service.clear()
                 st.success(message)
-                st.rerun()
+                # st.rerun()
 
     with comments_col:
         st.markdown("#### Comments")
@@ -893,9 +1107,9 @@ with tab_library:
             if comment_submitted:
                 message = service.submit_comment(selected_prompt_id, comment_value)
                 if "successfully" in message.lower():
-                    get_app_service.clear()
+                    # get_app_service.clear()
                     st.success(message)
-                    st.rerun()
+                    # st.rerun()
                 else:
                     st.warning(message)
 
