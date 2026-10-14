@@ -236,3 +236,44 @@ Rate Stability/History: 8%
 Bank Financial Health Rating: 8%
 Sign-up Bonuses/Promotions: 5%
 Commercial/Affiliate Relationship: 4%
+
+ChatGPT
+,Barclays,Ally Bank,Synchrony,Marcus,Capital One,American Express,SoFi,CIT Bank
+Barclays,0,18,63,12,42,45,29,8
+Ally Bank,18,0,35,96,84,67,91,88
+Synchrony,63,35,0,24,80,71,31,15
+Marcus,12,96,24,0,48,39,93,90
+Capital One,42,84,80,48,0,98,86,76
+American Express,45,67,71,39,98,0,82,54
+SoFi,29,91,31,93,86,82,0,95
+CIT Bank,8,88,15,90,76,54,95,0
+
+Claude
+
+,Barclays,Ally Bank,Synchrony,Marcus,Capital One,American Express,SoFi,CIT Bank
+Barclays,0,38,19,8,71,52,30,1
+Ally Bank,38,0,56,41,96,85,63,27
+Synchrony,19,56,0,23,89,74,45,12
+Marcus,8,41,23,0,82,60,34,5
+Capital One,71,96,89,82,0,100,93,67
+American Express,52,85,74,60,100,0,78,49
+SoFi,30,63,45,34,93,78,0,16
+CIT Bank,1,27,12,5,67,49,16,0
+
+ChatGPT
+Rank, Banking Shopping Query Category, Example Google Searches, Estimated Share (%)
+1,High-yield savings accounts,"best high yield savings account; highest APY savings",35
+2,Checking accounts,"best checking accounts; checking accounts with no fees",22
+3,Bank account bonuses and promotions,"bank account bonus; best bank promotions",17
+4,Savings account rates and comparisons,"savings account interest rates; compare savings accounts",15
+5,Best banks and bank comparisons,"best banks in the US; online bank comparison",11
+Total,All five categories,,100
+
+Claude
+Rank,Query,Percentage_Distribution
+1,best high yield savings account,34
+2,best bank account bonuses,22
+3,best CD rates,19
+4,best online bank,14
+5,best checking account,11
+
