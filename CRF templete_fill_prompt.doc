@@ -277,3 +277,89 @@ Rank,Query,Percentage_Distribution
 4,best online bank,14
 5,best checking account,11
 
+Reddit
+
+
+rank,estimated_number_of_threads_or_records,bank,product,common_themes
+1,"2000-5000",Ally Bank,High-Yield Savings Account,"APY; savings buckets; transfers; app; customer service"
+2,"1800-4500",SoFi,SoFi Savings,"Direct deposit; bonus offers; qualifying requirements; bundled accounts"
+3,"1500-4000",Capital One,360 Performance Savings,"APY changes; account access; transfers; fees"
+4,"1400-3800",Marcus by Goldman Sachs,Online Savings Account,"Rate changes; transfers; customer experience; CD comparisons"
+5,"1200-3500",Wealthfront,Cash Account,"Yield; cash access; partner-bank coverage; fintech safety"
+6,"1000-3000",American Express,High-Yield Savings Account,"Customer service; APY; account management; reliability"
+7,"900-2500",Discover,Online Savings Account,"Customer experience; transfers; fees; banking integration"
+8,"800-2300",Synchrony Bank,High-Yield Savings Account,"APY; ATM access; withdrawals; customer support"
+9,"700-2000",CIT Bank,Platinum Savings / Savings Connect,"Minimum balances; promotional rates; APY changes"
+10,"600-1800",Barclays,Online Savings Account,"Competitive rates; account access; transfer delays"
+11,"600-1700",Ally Bank,Certificates of Deposit,"Fixed rates; no-penalty CDs; maturity and renewal"
+12,"500-1500",American Express,Certificates of Deposit,"CD rates; term length; early withdrawal penalties"
+13,"400-1300",Axos Bank,High-Yield Savings / Axos ONE,"Conditional rates; qualifying deposits; account bundling"
+14,"350-1200",Bread Savings,High-Yield Savings / CDs,"APY; minimum deposits; service and withdrawal experience"
+15,"300-1000",Vio Bank,High-Yield Online Savings,"High APY; online transfers; account usability"
+
+reddit hashtags
+
+sentiment,rank,hashtag,common_theme
+Positive,1,#HighYieldSavings,Competitive savings interest
+Positive,2,#CompetitiveAPY,Attractive annual percentage yield
+Positive,3,#NoMonthlyFees,No monthly maintenance fees
+Positive,4,#EasyOnlineBanking,Convenient online account management
+Positive,5,#GrowYourSavings,Earning interest on savings
+Positive,6,#FDICInsured,Deposit protection and confidence
+Positive,7,#SavingsGoals,Saving for financial goals
+Positive,8,#CDRates,Competitive certificate of deposit rates
+Positive,9,#NoMinimumBalance,Accessible savings accounts
+Positive,10,#TrustedBanking,Brand reputation and confidence
+Negative,1,#AccountLocked,Restricted or frozen account access
+Negative,2,#PoorCustomerService,Difficulty resolving customer issues
+Negative,3,#TransferDelays,Slow external bank transfers
+Negative,4,#WithdrawalIssues,Problems accessing deposited funds
+Negative,5,#AccountAccessIssues,Login or online access problems
+Negative,6,#BankingComplaints,General dissatisfaction with banking
+Negative,7,#PoorCommunication,Delayed responses and unclear updates
+Negative,8,#AccountOpeningIssues,Application and verification difficulties
+Negative,9,#SavingsRateDrop,Falling savings interest rates
+Negative,10,#OnlineBankingIssues,Website and digital banking problems
+
+social media
+
+rank,number_of_threads_posts_estimated,bank,product,common_themes
+1,"15000-25000",Multiple banks,High-Yield Savings Accounts (HYSA),"Best APY; emergency funds; rate comparisons; online banking"
+2,"10000-18000",Multiple banks,Certificates of Deposit (CDs),"Fixed interest rates; CD ladders; lock-in periods; maturity planning"
+3,"6000-12000",Multiple banks,Money Market Accounts,"Liquidity; competitive yields; withdrawal limits; minimum balances"
+4,"4000-8000",Ally Bank,Online Savings Account,"Savings buckets; customer service; interest rates; app features"
+5,"3500-7000",Capital One,360 Performance Savings,"No monthly fees; accessibility; APY comparisons; digital banking"
+6,"3000-6000",Marcus by Goldman Sachs,Online Savings Account,"Competitive rates; no-fee banking; transfers; account access"
+7,"2500-5500",SoFi,Savings Account,"Direct deposit requirements; promotional APY; banking bundles"
+8,"2000-4500",Discover Bank,Online Savings Account,"No fees; ease of use; savings goals; customer experience"
+9,"1800-4000",American Express,High Yield Savings Account,"Brand trust; interest rates; transfers; customer service"
+10,"1500-3500",Synchrony Bank,High Yield Savings Account,"Competitive APY; ATM access; withdrawal flexibility"
+11,"1200-3000",Barclays,Tiered Savings Account,"APY comparisons; balance requirements; online account management"
+12,"1000-2500",CIT Bank,Platinum Savings / Savings Connect,"Promotional rates; minimum balances; rate eligibility"
+13,"800-2200",Wealthfront,Cash Account,"Cash yield; automation; FDIC insurance arrangements; transfers"
+14,"700-1800",LendingClub,High-Yield Savings Account,"Interest rates; minimum balances; fees; online banking"
+15,"500-1500",Forbright Bank,Growth Savings Account,"Competitive APY; online account opening; sustainability positioning"
+
+social media hashtag
+
+sentiment,rank,hashtag,common_theme
+Positive,1,#BarclaysSavings,Brand and savings product awareness
+Positive,2,#HighYieldSavings,High-yield savings interest
+Positive,3,#CompetitiveAPY,Competitive annual percentage yield
+Positive,4,#SavingsGoals,Reaching savings targets
+Positive,5,#GrowYourSavings,Building savings over time
+Positive,6,#FDICInsured,Deposit protection and confidence
+Positive,7,#OnlineSavings,Convenient digital savings
+Positive,8,#SavingsBonus,Promotional savings offers
+Positive,9,#SmartSaving,Personal finance and saving strategies
+Positive,10,#InterestEarnings,Earning interest on deposits
+Negative,1,#BarclaysComplaints,Customer complaints and dissatisfaction
+Negative,2,#AccountLocked,Restricted account access
+Negative,3,#PoorCustomerService,Unhelpful customer support
+Negative,4,#DelayedTransfers,Slow or delayed money transfers
+Negative,5,#AccountRestrictions,Unexpected account restrictions
+Negative,6,#SavingsAccountIssues,Problems opening or managing accounts
+Negative,7,#BankingProblems,General banking difficulties
+Negative,8,#ApplicationDelays,Slow account verification and approval
+Negative,9,#HiddenFees,Concerns about fees and conditions
+Negative,10,#AccessToFunds,Concerns about accessing deposited money
