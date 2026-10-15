@@ -1,68 +1,66 @@
-# ── CELL 1: Imports & file paths ─────────────────────────────────────────────
-
+import plotly.graph_objects as go
 import pandas as pd
 
-DB_FILE  = "databricks_export.csv"   # change to your file name (.csv or .xlsx)
-SAS_FILE = "sas_output.csv"          # change to your file name (.csv or .xlsx)
+# ── LOAD YOUR DATA ─────────────────────────────────────────────────────────────
+df = pd.read_csv("your_file.csv")
+# Expected columns: latitude, longitude, group  (group values: 1, 2, 3)
 
+# ── GROUP SETTINGS: color, bubble size, label ──────────────────────────────────
+group_config = {
+    1: {"color": "#E24B4A", "size": 18, "label": "Group 1"},   # Red        — large
+    2: {"color": "#EF9F27", "size": 12, "label": "Group 2"},   # Amber      — medium
+    3: {"color": "#85B7EB", "size": 7,  "label": "Group 3"},   # Light blue — small
+}
 
-# ── CELL 2: Load files ────────────────────────────────────────────────────────
+# ── BUILD ONE TRACE PER GROUP (keeps legend clean) ────────────────────────────
+fig = go.Figure()
 
-def load(path):
-    if path.endswith(".csv"):
-        df = pd.read_csv(path)
-    else:
-        df = pd.read_excel(path)
-    df.columns = df.columns.str.strip().str.lower()
-    return df
+for grp, cfg in group_config.items():
+    subset = df[df["group"] == grp]
+    fig.add_trace(go.Scattergeo(
+        lat=subset["latitude"],
+        lon=subset["longitude"],
+        mode="markers",
+        name=cfg["label"],
+        marker=dict(
+            size=cfg["size"],
+            color=cfg["color"],
+            opacity=0.85,
+            line=dict(width=0.5, color="white"),
+        ),
+        hovertemplate=(
+            f"<b>{cfg['label']}</b><br>"
+            "Lat: %{lat:.4f}<br>"
+            "Lon: %{lon:.4f}<br>"
+            "<extra></extra>"
+        ),
+    ))
 
-df_db  = load(DB_FILE)
-df_sas = load(SAS_FILE)
+# ── MAP LAYOUT ────────────────────────────────────────────────────────────────
+fig.update_layout(
+    title="Customer Distribution Across the US",
+    geo=dict(
+        scope="usa",
+        projection_type="albers usa",
+        showland=True,
+        landcolor="rgb(230, 230, 220)",
+        showlakes=True,
+        lakecolor="rgb(200, 220, 240)",
+        showcoastlines=True,
+        coastlinecolor="white",
+        showsubunits=True,       # state boundaries
+        subunitcolor="white",    # state border color
+        subunitwidth=1.5,        # state border thickness
+        showframe=False,
+    ),
+    legend_title_text="Group",
+    margin=dict(l=0, r=0, t=40, b=0),
+    height=550,
+)
 
-print("Databricks :", df_db.shape)
-print("SAS        :", df_sas.shape)
+# ── SAVE AS JPG ───────────────────────────────────────────────────────────────
+# pip install kaleido  (required for image export)
+fig.write_image("customer_map.jpg", width=1920, height=1080, scale=2)
 
-
-# ── CELL 3: Sort both on all columns ─────────────────────────────────────────
-
-common_cols = sorted(set(df_db.columns) & set(df_sas.columns))
-
-df_db  = df_db[common_cols].sort_values(by=common_cols).reset_index(drop=True)
-df_sas = df_sas[common_cols].sort_values(by=common_cols).reset_index(drop=True)
-
-print("Sorted on", len(common_cols), "columns")
-
-
-# ── CELL 4: Compare row by row ────────────────────────────────────────────────
-
-# Returns a True/False table — True means the cell is different
-diff_mask = df_db.astype(str) != df_sas.astype(str)
-
-print("Total rows compared  :", len(df_db))
-print("Rows with any diff   :", diff_mask.any(axis=1).sum())
-print("Columns with any diff:", diff_mask.any(axis=0).sum())
-
-
-# ── CELL 5: See which rows differ ────────────────────────────────────────────
-
-differing_rows = diff_mask[diff_mask.any(axis=1)]
-print(differing_rows)
-
-
-# ── CELL 6: See side-by-side for a specific column ───────────────────────────
-
-# Change "column_name" to whichever column you want to inspect
-col = "column_name"
-
-diff_in_col = diff_mask[col]
-print(pd.DataFrame({
-    "row"      : diff_in_col[diff_in_col].index,
-    "db_value" : df_db.loc[diff_in_col, col].values,
-    "sas_value": df_sas.loc[diff_in_col, col].values,
-}))
-
-
-# ── CELL 7: Export all differences ───────────────────────────────────────────
-
-diff_mask.to_csv("diff_mask.csv")
-print("Saved diff_mask.csv")
+# fig.show()                              # uncomment to open in browser
+# fig.write_html("customer_map.html")     # uncomment to save as HTML
