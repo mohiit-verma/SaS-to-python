@@ -64,3 +64,51 @@ fig.write_image("customer_map.jpg", width=1920, height=1080, scale=2)
 
 # fig.show()                              # uncomment to open in browser
 # fig.write_html("customer_map.html")     # uncomment to save as HTML
+
+
+
+import plotly.figure_factory as ff
+import plotly.graph_objects as go
+import pandas as pd
+
+# ── LOAD YOUR DATA ─────────────────────────────────────────────────────────────
+df = pd.read_csv("your_file.csv")
+# Expected columns: latitude, longitude, Customer
+
+# ── HEATMAP ───────────────────────────────────────────────────────────────────
+fig = go.Figure()
+
+fig.add_trace(go.Densitymapbox(
+    lat=df["latitude"],
+    lon=df["longitude"],
+    z=df["Customer"],           # continuous value driving intensity
+    radius=25,                  # spread of each point's influence (pixels)
+    colorscale="Viridis",
+    colorbar=dict(title="Customer"),
+    opacity=0.7,
+    hovertemplate=(
+        "Lat: %{lat:.4f}<br>"
+        "Lon: %{lon:.4f}<br>"
+        "Customer: %{z:,.0f}<br>"
+        "<extra></extra>"
+    ),
+))
+
+# ── MAP LAYOUT ────────────────────────────────────────────────────────────────
+fig.update_layout(
+    title="Customer Heatmap Across the US",
+    mapbox=dict(
+        style="carto-positron",     # clean base map with state boundaries
+        center=dict(lat=38, lon=-96),
+        zoom=3.5,
+    ),
+    margin=dict(l=0, r=0, t=40, b=0),
+    height=600,
+)
+
+# ── SAVE AS JPG ───────────────────────────────────────────────────────────────
+# pip install kaleido  (required for image export)
+fig.write_image("customer_heatmap.jpg", width=1920, height=1080, scale=2)
+
+# fig.show()                            # uncomment to open in browser
+# fig.write_html("customer_heatmap.html")  # uncomment to save as HTML
