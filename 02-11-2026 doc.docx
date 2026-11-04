@@ -69,3 +69,98 @@ Capital One,72,85,75,80,0,98,90,60
 American Express,78,88,80,84,98,0,92,65
 SoFi,55,78,68,72,90,92,0,48
 CIT Bank,25,40,35,38,60,65,48,0
+
+
+ChatGPT
+
+Rank	Bank / account	APY	Best for
+1	Axos Bank — ONE Savings	Up to 5.00%*	Highest promotional rate
+2	SoFi — Checking & Savings	Up to 4.40%*	Checking and savings together
+3	Peak Bank — Envision Savings	4.27%	Competitive rate without a monthly fee
+4	CIT Bank — Platinum Savings	Up to 4.25%*	Larger balances
+5	EverBank — Performance Savings	4.20%	Competitive ongoing yield
+6	Newtek Bank — Personal High Yield Savings	4.20%	Strong all-around option
+7	Happen Bank — LevelUp Savings	4.20%*	Rewards for regular deposits
+8	Vio Bank — High Yield Online Savings	4.01%	Straightforward online savings
+9	Live Oak Bank — Personal Savings	4.00%	No opening deposit required
+10	Forbright Bank — Growth Savings	3.85%	Savings with an environmental focus
+
+banks,rank
+Forbright,10
+CIT,4
+Axos,1
+Newtek,6
+Wealthfront,8
+Vio,8
+LendingClub,7
+SoFi,2
+Barclays,18
+Synchrony,12
+Ally Bank,16
+Amex,17
+Capital One,15
+
+Criteria,Weightage
+APY,25%
+Liquidity and Features,15%
+Fee and Restrictions,15%
+Safety and Availability,10%
+CX and Reputation,10%
+Rate Stability/History,8%
+Bank Financial Health Rating,8%
+Sign-up Bonuses/Promotions,5%
+Commercial/Affiliate Relationship,4%
+Total,100%
+
+
+Gemini
+
+banks, rank
+Axos, 1
+Wealthfront, 2
+SoFi, 3
+CIT, 4
+Capital One, 5
+Newtek, 6
+LendingClub, 7
+Vio, 8
+Forbright, 9
+Ally, 10
+Synchrony, 11
+Barclays, 12
+Amex, 13
+
+APY 33.3%
+Liquidity and Features 20.0%
+Fee and Restrictions 20.0%
+Safety and Availability 13.3%
+CX and Reputation 13.3%
+
+
+Claude
+
+bank,rank
+Forbright,12
+CIT,14
+Axos,1
+Newtek,9
+Wealthfront,22
+Vio,20
+LendingClub,3
+SoFi,1
+Barclays,26
+Synchrony,30
+Ally,35
+Amex,2
+Capital One,33
+
+APY: 25%
+Liquidity and Features: 15%
+Fee and Restrictions: 15%
+Safety and Availability: 10%
+CX and Reputation: 10%
+Rate Stability/History: 8%
+Bank Financial Health Rating: 8%
+Sign-up Bonuses/Promotions: 5%
+Commercial/Affiliate Relationship: 4%
+Total: 100%
