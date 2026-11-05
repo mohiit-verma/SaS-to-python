@@ -375,35 +375,56 @@ CX and Reputation,10
 
 nerdwallet
 
-banks,rank
-Axos,12
-Capital One,5
-Amex,29
-CIT (First Citizens),11
-Barclays,12
+bank,rank
 Ally Bank,NA
-Synchrony,24
-SoFi,1
-Forbright,8
-Newtek,3
+American Express (Amex),30
+Axos Bank,12
+Barclays,11
+CFG Bank,NA
+Capital One,5
+Chime,NA
+CIT Bank,10
+E*TRADE (Morgan Stanley),4
+Forbright Bank,8
+Go2bank,NA
+LendingClub Bank,NA
+MidFirst Bank,NA
+Newtek Bank,3
+Peak Bank,1
+Pibank,NA
+Popular Direct,18
+Quorum Federal Credit Union,NA
+Sallie Mae Bank,NA
+SoFi Bank,1
+Synchrony Bank,24
+Vio Bank,5
 Wealthfront,NA
-Vio,NA
-LendingClub,NA
+
 
 
 bankrate
 
-banks,rank
-Axos, Others
-Capital One,2
-Amex,NA
-CIT (First Citizens),1
-Barclays,4
+bank,rank
 Ally Bank,NA
-Synchrony,NA
-SoFi,Others
-Forbright,NA
-Newtek,NA
+American Express (Amex),NA
+Axos Bank,NA
+Barclays,NA
+CFG Bank,NA
+Capital One,2
+Chime,NA
+CIT Bank,1
+E*TRADE (Morgan Stanley),NA
+Forbright Bank,NA
+Go2bank,NA
+LendingClub Bank,NA
+MidFirst Bank,NA
+Newtek Bank,NA
+Peak Bank,9
+Pibank,NA
+Popular Direct,7
+Quorum Federal Credit Union,NA
+Sallie Mae Bank,8
+SoFi Bank,NA
+Synchrony Bank,NA
+Vio Bank,5
 Wealthfront,NA
-Vio,5
-LendingClub,NA
