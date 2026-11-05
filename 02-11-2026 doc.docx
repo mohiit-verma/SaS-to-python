@@ -85,6 +85,8 @@ Rank	Bank / account	APY	Best for
 9	Live Oak Bank — Personal Savings	4.00%	No opening deposit required
 10	Forbright Bank — Growth Savings	3.85%	Savings with an environmental focus
 
+best HYSA
+
 banks,rank
 Forbright,10
 CIT,4
@@ -99,6 +101,7 @@ Synchrony,12
 Ally Bank,16
 Amex,17
 Capital One,15
+Peak Bank,2
 
 Criteria,Weightage
 APY,25%
@@ -159,6 +162,59 @@ Fee and Restrictions,15%
 Safety and Availability,15%
 CX and Reputation,20%
 
+best CD
+
+banks,rank
+Forbright,28
+CIT,22
+Axos,24
+Newtek,16
+Wealthfront,40
+Vio,14
+LendingClub,13
+SoFi,35
+Barclays,8
+Synchrony,9
+Ally Bank,10
+Amex,12
+Capital One,20
+Popular Direct,1
+Sallie Mae,2
+Quorum Federal Credit Union,3
+
+APY: 40%
+Liquidity and Features: 20%
+Fee and Restrictions: 15%
+Safety and Availability: 15%
+CX and Reputation: 10%
+
+general and Traditional Sa
+
+banks,rank
+Forbright,11
+CIT,5
+Axos,3
+Newtek,1
+Wealthfront,12
+Vio,4
+LendingClub,13
+SoFi,9
+Barclays,14
+Synchrony,10
+Ally Bank,6
+Amex,15
+Capital One,7
+Peak Bank,2
+
+
+APY 40%
+Liquidity and Features 20%
+Fee and Restrictions 15%
+Safety and Availability 15%
+CX and Reputation 10%
+
+
+
 Gemini
 
 Best HYSA
@@ -185,130 +241,136 @@ Safety and Availability 13.3%
 CX and Reputation 13.3%
 
 
-Best Saving
+best CD
 
-Bank, Rank
-Wealthfront, 1
-SoFi, 2
-CIT, 3
-Axos, 4
-Newtek, 5
-Synchrony, 6
-Forbright, 7
-Barclays, 8
-Capital One, 9
-American Express, 10
-Ally, 11
-Vio, 12
-LendingClub, 13
+banks,rank
+Popular Direct,1
+Sallie Mae Bank,2
+CFG Bank,3
+Capital One,8
+American Express (Amex),15
+Barclays,22
+Ally Bank,27
+Synchrony Bank,35
+SoFi Bank,52
+MidFirst Bank (Vio Bank),61
+Axos Bank,73
+CIT Bank (First Citizens),21 (Parent) / Top 100
+Forbright Bank,Top 150
+LendingClub Bank,Top 150
+Newtek Bank,Top 250
+Wealthfront,N/A (Fintech/Brokerage)
 
-Evaluation Criteria,Weightage (%)
-APY,45
-Fee and Restrictions,20
-Liquidity and Features,15
-Safety and Availability,10
-CX and Reputation,10
+APY  45%
+Liquidity and Features 20%
+Fee and Restrictions 15%
+Safety and Availability 10%
+CX and Reputation 10%
 
-short term park
+checking accounts
 
 banks, rank
 Capital One, 7
-American Express, 15 / 22
 Barclays, 22
-Ally, 24 / 27
-Synchrony, 30 / 35
-SoFi, 47 / 52
+Ally, 24
+Synchrony, 30
+Amex, 31
+SoFi, 52
 Axos, 73
-Forbright, Outside Top 100
-CIT, Subsidiary of First Citizens (#19 / #21)
-Newtek, Outside Top 100
-Wealthfront, Fintech (Not a direct bank / holds deposits via partner banks)
-Vio, Brand of MidFirst Bank (#61)
+Forbright, ~90
+LendingClub, ~100
+Wealthfront, Fintech (N/A)
+CIT, Acquired by First Citizens (19)
+Newtek, Regional / Non-Top 100
+Vio, Division of MidFirst (60)
 
-APY 40%
-Liquidity and Features 20%
-Fee and Restrictions 15%
-Safety and Availability 15%
-CX and Reputation 10%
+Criteria,Weight (%)
+Fee and Restrictions,30
+APY,25
+Liquidity and Features,20
+Safety and Availability,15
+CX and Reputation,10
+
+
 
 Claude
 
 Best HYSA
 
-bank,rank
-Forbright,12
-CIT,14
+banks,rank
+Forbright,21
+CIT,5
 Axos,1
-Newtek,9
-Wealthfront,22
-Vio,20
-LendingClub,3
-SoFi,1
-Barclays,26
-Synchrony,30
-Ally,35
-Amex,2
-Capital One,33
+Newtek,6
+Wealthfront,33
+Vio,11
+LendingClub,7
+SoFi,4
+Barclays,47
+Synchrony,24
+Ally Bank,45
+Amex,8
+Capital One,46
+Go2bank,2
+Pibank,3
 
-APY: 25%
-Liquidity and Features: 15%
-Fee and Restrictions: 15%
-Safety and Availability: 10%
-CX and Reputation: 10%
-Rate Stability/History: 8%
-Bank Financial Health Rating: 8%
-Sign-up Bonuses/Promotions: 5%
-Commercial/Affiliate Relationship: 4%
-Total: 100%
+criteria,weightage (%)
+APY (a),35.0
+Liquidity and Features (b),15.7
+Fee and Restrictions (c),15.7
+Safety and Availability (d),16.0
+CX and Reputation (e),17.7
 
-best saving
+checking
 
 bank,rank
-Forbright,5
-CIT,3
-Axos,40+
-Newtek,40+
-Wealthfront,N/A
+Capital One,1
+SoFi,2
+Chime,3
+Ally Bank,4
+Axos,6
+Amex,~15
+CIT,~17
+Synchrony,~25
+Barclays,~30
 Vio,40+
 LendingClub,40+
-SoFi,40+
-Barclays,40+
-Synchrony,~38
-Ally Bank,~25
-Amex,~28
-Capital One,6
-
-criterion,weight_pct
-APY,35
-Liquidity and Features,15
-Fees and Restrictions,20
-Safety and Availability,20
-CX and Reputation,10
-
-short term park
-
-banks,rank
-Axos,2
-Capital One,8
-Amex,15
-CIT (First Citizens),21
-Barclays,22
-Ally Bank,27
-Synchrony,35
-SoFi,Not in top 40
-Forbright,Not in top 40
-Newtek,Not in top 40
-Wealthfront,Not in top 40
-Vio,Not in top 40
-LendingClub,Not in top 40
+Forbright,40+
+Newtek,40+
+Wealthfront,N/A
 
 criteria,weight
-APY,35%
+APY,30%
 Liquidity and Features,20%
-Fee and Restrictions,15%
+Fee and Restrictions,20%
 Safety and Availability,20%
 CX and Reputation,10%
-Total,100%
+
+
+CD
+
+Bank,Rank
+E*TRADE (Morgan Stanley),1
+Barclays,2
+Synchrony,3
+Capital One,4
+LendingClub,8
+CIT Bank,11
+Newtek Bank,14
+Forbright Bank,17
+Ally Bank,19
+Amex,22
+Vio Bank,27
+SoFi,31
+Wealthfront,34
+Axos,38
+
+Criterion,Weight_%
+APY,40
+Liquidity and Features,15
+Fee and Restrictions,15
+Safety and Availability,20
+CX and Reputation,10
 
 
 nerdwallet
