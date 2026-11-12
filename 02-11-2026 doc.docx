@@ -428,3 +428,111 @@ SoFi Bank,NA
 Synchrony Bank,NA
 Vio Bank,5
 Wealthfront,NA
+
+
+12/11
+Savings
+
+Category,Parameter,Barclays,Marcus,SoFi,Ally Bank,Synchrony
+Ranking,Overall Rank,Benchmark,1,2,3,4
+Interest Rates,Standard APY,3.50-3.65%,3.50%,0.80%,3.10%,2.85%
+Interest Rates,Promotional or Qualifying APY,Tiered rate,Referral offers,3.30% qualifying APY,Promotional offers,Promotional offers
+Interest Rates,APY Structure,Tiered,Flat,Conditional,Flat,Flat
+Interest Rates,Interest Compounding,Daily,Daily,Daily,Daily,Daily
+Interest Rates,Interest Payment,Monthly,Monthly,Monthly,Monthly,Monthly
+Interest Rates,Rate Variability,Variable,Variable,Variable,Variable,Variable
+Account Opening,Minimum Opening Deposit,$0,$0,$0,$0,$0
+Account Opening,Minimum Balance,No significant minimum,None,None,None,None
+Account Opening,Monthly Maintenance Fee,$0,$0,$0,$0,$0
+Account Opening,Online Account Opening,Yes,Yes,Yes,Yes,Yes
+Account Opening,Joint Account,Yes,Yes,Yes,Yes,Yes
+Banking Facilities,Checking Account,No,No,Yes,Yes,No
+Banking Facilities,Debit Card,No,No,Yes through checking,Through Spending Account,No standard debit card
+Banking Facilities,ATM Access,No,No,Yes through checking,Through linked accounts,Optional ATM card
+Banking Facilities,Physical Branches,No regular branches,No,No regular branches,Limited physical presence,No
+Banking Facilities,Mobile Banking,Yes,Yes,Yes,Yes,Yes
+Banking Facilities,Mobile Check Deposit,Yes,No standard mobile deposit,Yes,Yes,Yes
+Banking Facilities,Direct Deposit,Yes,Yes,Yes,Yes,Yes
+Liquidity,External ACH Transfers,Yes,Yes,Yes,Yes,Yes
+Liquidity,Same-Day Transfers,Standard terms,Qualifying transfers,Eligibility dependent,Expedited options,Standard terms
+Liquidity,Withdrawal Flexibility,Account restrictions apply,Generally no withdrawal count limit,Account restrictions apply,10 limited transactions per statement cycle,6 limited transfers per statement cycle
+Liquidity,ATM Cash Withdrawal,No,No,Yes,Through linked account,Yes
+Liquidity,Cash Deposits,No,No,Green Dot locations,Eligible Spending Account options,No
+Liquidity,Emergency Fund Suitability,Good,Good,Very Good,Very Good,Very Good
+Fees and Restrictions,Outgoing ACH Fee,Check terms,$0,$0,$0 standard ACH,$0
+Fees and Restrictions,Outgoing Wire Fee,Check terms,$0,May apply,Depends on wire type,$25
+Fees and Restrictions,Overdraft Fee,Not applicable,Not applicable,$0 qualifying coverage,$0,Not applicable
+Fees and Restrictions,APY Eligibility Requirements,Balance tiers,None,Qualifying activity,None,None
+Fees and Restrictions,Account Balance Restrictions,Account limits apply,Account limits apply,Account limits apply,Account limits apply,Account limits apply
+Customer Support,24/7 Phone Support,No,Yes,Verify current schedule,Yes,No
+Customer Support,Live Chat or Online Support,Online support,Online support,Yes,Yes,Online support
+Customer Support,Customer Service Availability,7 days 8 AM-8 PM ET,24/7,Verify current schedule,24/7,Published scheduled hours
+Customer Support,Fraud and Security Support,Yes,Yes,Yes,Yes,Yes
+Digital Experience,Automated Savings,Savings Assistant,Basic tools,Vaults and automation,Buckets and Boosters,Savings goal tools
+Digital Experience,Savings Goals,Yes,Basic,Yes,Yes,Yes
+Digital Experience,Financial Management Tools,Limited,Limited,Strong,Strong,Limited
+Digital Experience,Account Alerts,Yes,Yes,Yes,Yes,Yes
+Safety and Reputation,FDIC Insured,Yes,Yes,Yes,Yes,Yes
+Safety and Reputation,Standard FDIC Coverage,$250000,$250000,$250000,$250000,$250000
+Safety and Reputation,Customer Satisfaction,Good,Very Strong,Strong,Very Strong,Moderate
+Overall Assessment,Primary Competitive Strength,Tiered savings rates,Savings-focused experience,Integrated digital banking,Savings automation,ATM liquidity and savings
+
+Evaluation parameter	Weight
+APY and interest rate competitiveness	20%
+Liquidity and withdrawal flexibility	15%
+Banking features and account functionality	12%
+Fees and restrictions	10%
+Customer experience and reputation	12%
+Customer support and service quality	10%
+Digital banking and mobile experience	8%
+Account opening ease and eligibility	5%
+Financial safety and FDIC protection	5%
+Promotional offers and bonuses	3%
+Total	100%
+
+CD
+
+# Barclays CD Competitive Benchmark — November 2026
+
+## 1. Competitor benchmarking CSV
+
+```csv
+Rank,Institution,CD APY Range,Minimum Deposit,CD Term Range,No Penalty CD,Bump Up CD,Key Competitive Advantage
+Benchmark,Barclays,4.00%-4.75%,0,6 months-5 years,No,No specialty option identified,No minimum deposit and 14-day maturity grace period
+1,Quorum Federal Credit Union,1.75%-5.00%,100,3 months-5 years,Not verified,Not verified,Highest advertised rate in this comparison and low minimum deposit
+2,BTG Pactual Bank,4.10%-4.85%,500,3 months-5 years,Yes - 13-month option,Product options to verify,Competitive yields and specialty CD flexibility
+3,Synchrony Bank,0.25%-4.80%,0,3 months-5 years,Yes,Bump-up option available,No minimum deposit and broad CD product selection
+4,Sallie Mae Bank,3.20%-5.00%,2500,6 months-5 years,Not verified,Not verified,Competitive longer-term rates and broad maturity coverage
+```
+
+## 2. CD-specific scoring criteria CSV
+
+```csv
+Parameter,Weight,Evaluation Basis
+APY and Interest Rate Competitiveness by Term,25%,Compare APY at identical CD maturities
+Early Withdrawal Penalty,15%,Lower penalty and fewer restrictions receive higher scores
+CD Term Range and Maturity Flexibility,12%,Availability of short, medium and long-term maturities
+Minimum Deposit Requirement,10%,Lower opening deposit receives higher score
+No-Penalty and Partial Withdrawal Flexibility,10%,Availability and conditions of penalty-free access
+Rate Guarantee Bump-Up and Add-On Options,8%,Availability of rate guarantees, bump-up and additional deposit features
+Interest Compounding and Payout Options,6%,Compounding frequency and ability to withdraw interest
+Maturity Grace Period and Renewal Flexibility,5%,Grace period, renewal instructions and maturity options
+CD Ladder Suitability,5%,Availability of staggered terms for ladder strategies
+FDIC or NCUA Deposit Protection,4%,Applicable deposit insurance and coverage
+Total,100%, 
+```
+
+## 3. Suggested scoring scale
+
+```csv
+Score,Interpretation
+5,Excellent
+4,Above Average
+3,Average
+2,Below Average
+1,Poor
+```
+
+**Ranking methodology:** The competitor ranks are preliminary analytical rankings, not calculated weighted scores. For a final scorecard, assign each institution a score from 1 to 5 for every criterion, multiply by the criterion weight, and add the weighted results.
+
+**Rate comparison rule:** Compare each institution's 6-month, 12-month, 24-month, 36-month and 60-month APYs separately. Do not award a bank a higher score solely because its highest advertised APY applies to a different maturity.
