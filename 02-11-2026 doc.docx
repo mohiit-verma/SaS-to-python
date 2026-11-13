@@ -536,3 +536,103 @@ Score,Interpretation
 **Ranking methodology:** The competitor ranks are preliminary analytical rankings, not calculated weighted scores. For a final scorecard, assign each institution a score from 1 to 5 for every criterion, multiply by the criterion weight, and add the weighted results.
 
 **Rate comparison rule:** Compare each institution's 6-month, 12-month, 24-month, 36-month and 60-month APYs separately. Do not award a bank a higher score solely because its highest advertised APY applies to a different maturity.
+
+You are a search-demand analyst supporting competitive strategy for a 
+retail bank.
+
+prompt for product market share
+
+
+TASK
+Estimate the distribution of US consumer search demand for 
+[PRODUCT CATEGORY: e.g. deposit accounts] and return it as a 
+cluster-level percentage share table.
+
+METHOD — follow in order
+1. Define the denominator explicitly. Include acquisition and research 
+   intent queries. EXCLUDE pure servicing queries (e.g. "[bank] login", 
+   "[bank] routing number"), which distort brand share. State the 
+   denominator and your estimated total monthly volume before the table.
+2. Build the query inventory. List the head terms and their long-tail, 
+   tenor, educational, comparison, local, and segment variants.
+3. Set the unit of analysis to PRODUCT CLUSTER, not exact-match query. 
+   Roll every variant into its parent cluster.
+4. Assign directional monthly US volumes, then compute each cluster's 
+   share. Shares must total 100%.
+
+OUTPUT
+| Cluster | Share |
+Ordered high to low. Whole numbers or one decimal.
+
+Then, below the table:
+- One line per cluster listing which queries roll up into it
+- Which cluster's share is least stable and why
+- Any cluster that is concentrated in a few players rather than 
+  distributed
+
+CONSTRAINTS
+- Label these as modeled estimates, not measured data. Do not present 
+  false precision.
+- Do not reverse-engineer toward a target number. If I supply an 
+  expected share, reconcile against it and tell me what definitional 
+  change would be required — do not silently adjust inputs.
+- Flag that Google Keyword Planner, Semrush, or Ahrefs is required for 
+  figures that will go client-facing.
+
+PARAMETERS
+Market: [US]
+Product category: [deposit accounts]
+Competitor of interest: [Barclays USCB]
+Time frame: [current quarter]
+
+
+
+You are a financial data analyst specializing in digital search behavior and brand visibility metrics.
+Your task is to analyze the **relative Google search popularity** of the following 10 US banks.
+**Banks:**
+Barclays
+Ally Bank
+Synchrony
+Marcus
+Capital One
+American Express
+SoFi
+CIT Bank
+---
+**Your Task:**
+**Step 1: Estimate pairwise search volume**
+For every unique bank pair (i, j) where i ≠ j, independently estimate the combined Google search volume
+when both banks are searched together or compared. This gives you a raw search volume estimate
+for each of the 45 unique pairs.
+**Step 2: Rank order and score**
+Once you have raw search volume estimates for all 45 unique pairs, rank order them from lowest
+to highest and rescale them to a score between 1–100, where:
+- The pair with the **lowest** combined search volume gets a score closest to **1**
+- The pair with the **highest** combined search volume gets a score closest to **100**
+- All other pairs are scored **proportionally** in between based on their rank
+**Step 3: Build the matrix**
+Populate a 10×10 symmetric matrix using the rescaled scores where:
+- **cell[i][j]** = rescaled score for the pair (i, j)
+- **cell[i][i]** = 0 (same bank compared to itself)
+- **cell[i][j]** = **cell[j][i]** always (fully symmetric)
+---
+**Output format (strict):**
+Respond with ONLY the following CSV — no explanation, no markdown, no extra text, no code fences.
+The first row must be a header with a blank first cell followed by all 10 bank names.
+Each subsequent row must start with the bank name, followed by 10 comma-separated integer scores.
+,Barclays, Ally Bank, Synchrony ,Marcus, Capital One, American Express, SoFi, CIT Bank
+Barclays,0,<score>,<score>,<score>,<score>,<score>,<score>,<score>,<score>,<score>
+Ally Bank,<score>,0,<score>,<score>,<score>,<score>,<score>,<score>,<score>,<score>
+Synchrony ,<score>,<score>,0,<score>,<score>,<score>,<score>,<score>,<score>,<score>
+Marcus,<score>,<score>,<score>,0,<score>,<score>,<score>,<score>,<score>,<score>
+Capital One,<score>,<score>,<score>,<score>,0,<score>,<score>,<score>,<score>,<score>
+American Express,<score>,<score>,<score>,<score>,<score>,0,<score>,<score>,<score>,<score>
+SoFi,<score>,<score>,<score>,<score>,<score>,<score>,0,<score>,<score>,<score>
+CIT Bank,<score>,<score>,<score>,<score>,<score>,<score>,<score>,<score>,0,<score>
+---
+**Rules:**
+- Diagonal must always be 0
+- Matrix must be perfectly symmetric: row i col j = row j col i
+- All scores must be integers between 1 and 100
+- Scoring is based on rank order of pairwise search volume estimates, not individual bank popularity
+- No extra text, headers, or explanation outside the CSV block
