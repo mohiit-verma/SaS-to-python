@@ -588,7 +588,7 @@ Time frame: [current quarter]
 
 
 You are a financial data analyst specializing in digital search behavior and brand visibility metrics.
-Your task is to analyze the **relative Google search popularity** of the following 10 US banks.
+Your task is to analyze the **relative Google search popularity** of the following US banks.
 **Banks:**
 Barclays
 Ally Bank
@@ -636,3 +636,23 @@ CIT Bank,<score>,<score>,<score>,<score>,<score>,<score>,<score>,<score>,0,<scor
 - All scores must be integers between 1 and 100
 - Scoring is based on rank order of pairwise search volume estimates, not individual bank popularity
 - No extra text, headers, or explanation outside the CSV block
+
+slide 20 prompt
+
+
+best CD in us
+
+I want the approximate rank and the rank from above table for the following banks 
+use the above ranks for the banks which are available in above list 
+for the remaining banks give me ranks from top 40 banks in US
+provide data in CSV as banks, rank
+| Forbright CIT Axos Newtek Wealthfront Vio LendingClub SoFi Barclays Synchrony Ally   Bank Amex Capital one |
+also include the top 3 banks from above table
+
+now give me the weightage for these ranks on following criteria
+
+APY  a%
+Liquidity and Features b%
+Fee and Restrictions c%
+Safety and Availability d%
+CX and Reputation e%
