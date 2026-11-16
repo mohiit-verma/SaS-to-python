@@ -656,3 +656,127 @@ Liquidity and Features b%
 Fee and Restrictions c%
 Safety and Availability d%
 CX and Reputation e%
+
+16/11/2026
+
+Gemini
+
+CD
+
+banks,rank
+Quorum Federal Credit Union,1
+USAlliance Financial,2
+Tower Federal Credit Union,3
+Synchrony Bank,5
+LendingClub (Happen Bank),9
+Barclays,10
+Capital One,12
+Amex (American Express National Bank),13
+Axos Bank,14
+Newtek Bank,16
+Vio Bank,19
+Ally Bank,20
+Forbright Bank,22
+CIT Bank,31
+Wealthfront,N/A
+SoFi,N/A
+
+HYSA
+
+banks,rank
+Axos ONE,1
+SoFi,2
+CIT Platinum,3
+Openbank,4
+Peak Bank,5
+EverBank,6
+Newtek,7
+LendingClub (Happen Bank),8
+Vio,11
+Forbright,15
+Synchrony,18
+Wealthfront,21
+Amex,26
+Capital One,27
+Barclays,28
+Ally Bank,29
+
+ChatGPT
+
+HYSA
+
+banks,rank
+Forbright,8
+CIT,4
+Axos,1
+Newtek,7
+Wealthfront,10
+Vio,9
+LendingClub,12
+SoFi,2
+Barclays,18
+Synchrony,12
+Ally Bank,16
+Amex,17
+Capital One,15
+
+CD
+
+banks,rank
+Forbright,16
+CIT,13
+Axos,17
+Newtek,18
+Wealthfront,NA
+Vio,14
+LendingClub,19
+SoFi,20
+Barclays,7
+Synchrony,6
+Ally Bank,8
+Amex,9
+Capital One,10
+Popular Direct,1
+Sallie Mae Bank,2
+Bread Savings,3
+
+Claude
+
+HYSA
+
+banks, rank
+Axos, 1
+Wealthfront, 2
+Accordia, 3
+Vio, 4
+LendingClub, 5
+Happen Bank LevelUp, 6
+SoFi, 7
+Forbright, 8
+Synchrony, 9
+Barclays, 10
+CIT, 11
+Capital One, 12
+Ally, 13
+Amex, 14
+Newtek, 15
+
+CD
+
+bank,rank
+Quorum Federal Credit Union,1
+Popular Direct,2
+E*Trade from Morgan Stanley,3
+Capital One,4
+Synchrony,4
+Amex,~18
+CIT,~20
+Barclays,~22
+Ally Bank,~24
+SoFi,>40
+Vio,>40
+Axos,>40
+LendingClub,>40
+Forbright,>40
+Newtek,>40
+Wealthfront,>40
