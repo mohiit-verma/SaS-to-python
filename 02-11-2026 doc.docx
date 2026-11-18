@@ -780,3 +780,130 @@ LendingClub,>40
 Forbright,>40
 Newtek,>40
 Wealthfront,>40
+
+18/11/26
+
+Gemini Flash light
+
+HYSA
+
+banks	rank
+Axos Bank	1
+SoFi	2
+Openbank	3
+CIT Bank	4
+Peak Bank	5
+EverBank	6
+Happen Bank	7
+
+CD
+
+banks,rank
+USALLIANCE Financial,1
+Quorum Federal Credit Union,2
+Popular Direct,3
+BTG Pactual Bank,4
+Bread Savings,5
+E*TRADE (Morgan Stanley),6
+Synchrony Bank,7
+Barclays,8
+Marcus by Goldman Sachs,9
+Ally Bank,10
+American Express National Bank,11
+Capital One,12
+Wells Fargo,13
+Citibank,14
+
+ChatGPT
+
+CD
+
+banks,rank
+Popular Direct,1
+Sallie Mae Bank,2
+Bread Savings,3
+Quorum Federal Credit Union,4
+CFG Bank,5
+E*TRADE,6
+Synchrony Bank,7
+Barclays US,8
+Happen Bank,9
+BTG Pactual Bank,10
+Newtek Bank,11
+Vio Bank,12
+Ally Bank,13
+Marcus by Goldman Sachs,14
+Credit One Bank,15
+
+HYSA
+
+banks,rank
+Forbright,8
+CIT,4
+Axos,1
+Newtek,6
+Wealthfront,5
+Vio,2
+LendingClub,7
+SoFi,3
+Barclays,11
+Synchrony,9
+Ally Bank,12
+Amex,13
+Capital One,14
+
+Claude Opus 5.5
+
+HYSA
+
+banks, rank
+Axos Bank, 1
+SoFi, 2
+Openbank, 3
+CIT Bank Platinum Savings, 4
+Bask Bank, 5
+Marcus by Goldman Sachs, 6
+
+
+CD
+
+banks, rank
+Southland Credit Union, 1
+USALLIANCE Financial, 2
+Quorum Federal Credit Union, 2
+Sallie Mae Bank, 2
+Popular Direct, 5
+CFG Bank, 6
+E*Trade from Morgan Stanley, 7
+Capital One, 8
+Synchrony Bank, 8
+Dow Credit Union, 10
+
+Claude Haiku 5.5
+
+CD
+
+banks, rank
+USALLIANCE Financial, 1
+Quorum Federal Credit Union, 1
+Popular Direct, 1
+CFG Bank, 4
+E*TRADE from Morgan Stanley, 5
+Dow Credit Union, 6
+
+HYSA
+
+banks, rank
+Axos Bank, 1
+Happen Bank, 2
+CIT Bank, 2
+Morgan Stanley Private Bank, 4
+Happen LevelUp Savings, 5
+Accordia, 6
+Bread Savings, 7
+Sallie Mae High-Yield Savings, 8
+Bask Interest Savings, 8
+Live Oak Bank, 8
+Forbright Bank, 11
+Openbank High Yield Savings, 12
+
