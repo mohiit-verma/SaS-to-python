@@ -814,6 +814,18 @@ Capital One,12
 Wells Fargo,13
 Citibank,14
 
+,Barclays,Ally Bank,Synchrony,Marcus,Capital One,American Express,SoFi,CIT Bank
+Barclays,0,60,41,30,78,74,67,8
+Ally Bank,60,0,52,34,89,85,82,12
+Synchrony,41,52,0,27,71,63,56,5
+Marcus,30,34,27,0,49,45,38,1
+Capital One,78,89,71,49,0,100,96,23
+American Express,74,85,63,45,100,0,93,19
+SoFi,67,82,56,38,96,93,0,16
+CIT Bank,8,12,5,1,23,19,16,0
+
+
+
 ChatGPT
 
 CD
@@ -851,6 +863,17 @@ Synchrony,9
 Ally Bank,12
 Amex,13
 Capital One,14
+
+
+,Barclays,Ally Bank,Synchrony,Marcus,Capital One,American Express,SoFi,CIT Bank\
+Barclays,0,16,12,5,42,23,19,1\
+Ally Bank,16,0,64,38,93,79,82,34\
+Synchrony,12,64,0,30,90,75,53,27\
+Marcus,5,38,30,0,71,60,49,8\
+Capital One,42,93,90,71,0,100,97,68\
+American Express,23,79,75,60,100,0,86,56\
+SoFi,19,82,53,49,97,86,0,45\
+CIT Bank,1,34,27,8,68,56,45,0
 
 Claude Opus 5.5
 
@@ -907,3 +930,12 @@ Live Oak Bank, 8
 Forbright Bank, 11
 Openbank High Yield Savings, 12
 
+,Barclays, Ally Bank, Synchrony ,Marcus, Capital One, American Express, SoFi, CIT Bank
+Barclays,0,38,16,19,78,74,56,8
+Ally Bank,38,0,27,30,89,85,82,23
+Synchrony ,16,27,0,12,63,60,49,5
+Marcus,19,30,12,0,71,67,52,1
+Capital One,78,89,63,71,0,100,96,45
+American Express,74,85,60,67,100,0,93,41
+SoFi,56,82,49,52,96,93,0,34
+CIT Bank,8,23,5,1,45,41,34,0
